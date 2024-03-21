@@ -1,4 +1,4 @@
-from typing import List, Callable
+from typing import List, Callable, Optional
 from dataclasses import dataclass
 
 @dataclass
@@ -12,7 +12,7 @@ class CrawlPoint:
     match: str                  # Pattern matching for referenced URLs
     selector: str               # Selector inside the URL page (filter for HTML, like DIV)
     max_n_ref: int              # Max references allowed for this crawl point (references inherit this)
-    cookies: List[CookieData]   # List of cookies to be added to this URL (browser keeps them available)
+    cookies: Optional[List[CookieData]] = None   # List of cookies to be added to this URL (browser keeps them available)
 
     def pretty_print(self, cout: Callable):
         cout(f"- {self.url} | {self.selector}")

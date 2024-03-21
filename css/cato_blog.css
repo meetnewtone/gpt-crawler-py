@@ -1,0 +1,23 @@
+body > div.wrapper > header > div.container-fluid > div {
+    display: none;
+}
+
+#trinity-audio-tab {
+    display: none;
+}
+
+body > div.wrapper > footer {
+    display: none;
+}
+
+body > div.wrapper > article > footer > div {
+    display: none;
+}
+
+body > div.wrapper > div > div > div.c-background__content > div > div > ul {
+    display: none;
+}
+
+body > div.wrapper > article > div > div.article__related-topics {
+    display: none;
+}

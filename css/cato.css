@@ -1,0 +1,13 @@
+/* Hide main containers or sections */
+/* main, header, footer, section, .container, .wrapper {
+    display: none;
+}
+
+/* Explicitly display the specific element and its necessary parent elements */
+#b-product-page-content-boxes-1, #b-product-page-content-boxes-1 * {
+    display: block !important;
+} */
+
+#b-product-page-content-boxes-1 > section > div.b-product-page-content-boxes__nav {
+    display: : none;
+}

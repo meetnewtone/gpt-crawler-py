@@ -4,12 +4,14 @@ import asyncio
 import fnmatch
 from pathlib import Path
 from itertools import islice
+from os import environ
 
 from config import *
 
 # Brower used
 from playwright.async_api import async_playwright
 
+CHROMIUM_PATH = environ.get('CHROMIUM_PATH') 
 
 # Function to get page HTML
 async def get_page_html(page, selector):
@@ -34,7 +36,7 @@ class log_ongoing():
 async def crawl(config: CrawlerConfig):
     json_seperator = None
     n_results_left = config.max_results \
-        if config.max_results is not None else -1
+        if config.max_results is not None else len(config.sources)
     queue = config.sources[:n_results_left]
     n_results_left -= len(queue)
     outpath = Path(config.output)
@@ -47,7 +49,8 @@ async def crawl(config: CrawlerConfig):
     already_crawled = set()
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+
+        browser = await p.chromium.launch(headless=True, executable_path=CHROMIUM_PATH)
         page = await browser.new_page()
 
         try:

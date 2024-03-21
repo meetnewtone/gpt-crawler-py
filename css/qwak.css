@@ -1,0 +1,24 @@
+body > div.page-wrapper > footer {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(3) > div {
+    display: none;
+}
+
+#hs-eu-cookie-confirmation-inner {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(1) > div > div > div.template-details-wrap > div.back-link-wrap {
+    display: none;
+}
+
+
+body > div.page-wrapper > div > div.container-large.w-container {
+    display: none;
+}
+
+body > div.page-wrapper > div {
+    display: none;
+}
