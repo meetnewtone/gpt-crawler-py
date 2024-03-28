@@ -22,3 +22,68 @@ body > div.page-wrapper > div > div.container-large.w-container {
 body > div.page-wrapper > div {
     display: none;
 }
+
+
+/* From model registry */
+#hs-eu-cookie-confirmation #hs-eu-cookie-confirmation-inner {
+    display: none;
+}
+
+.top-bar.padding-xsmall {
+    display: none;
+}
+
+body > div.page-wrapper > div > div.container-large.w-container {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(7) > div {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(6) > div {
+    display: none;
+}
+
+#ssr-main > div > header > div.rm-Header-top.Header-topuTMpygDG4e1V {
+    display: none;
+}
+
+#hub-sidebar {
+    display: none;
+}
+
+#ssr-main > div > header > div.rm-Header-bottom > div > div {  
+    display: none;
+}
+
+#content-container > section.content-body.grid-75 > nav {
+    display: none;
+}
+
+#content-container > section.content-body.grid-75 > div.rm-PageThumbs.PageThumbs {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(1) > div > div > div.fs-toc_example > div.fs-toc_sidebar {
+    display: none;
+}
+
+
+
+/* For comparisons */
+body > div.page-wrapper > main > section:nth-child(n) > div > div.cta_button-wrap {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(2) > div.container-small.w-container > div {
+    display: none;
+}
+
+#w-node-_36b4e5b2-a68c-2d21-a0bf-a3cdd2d8d70e-6937a833 {
+    display: none;
+}
+
+body > div.page-wrapper > main > section:nth-child(9) {
+    display: none;
+}

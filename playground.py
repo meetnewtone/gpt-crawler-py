@@ -6,6 +6,8 @@ import json
 from llama_parse import LlamaParse
 from llama_index.core import SimpleDirectoryReader
 import os
+import yaml
+import convertapi
 import nest_asyncio
 nest_asyncio.apply()
 
@@ -73,15 +75,18 @@ USE_SELECTOR = False
 
 
 def convert_url_to_pdf(url, 
-                       output='new-fuck.pdf', 
+                       output, 
                        output_dir=None, 
                        skip_browser=False, 
                        css=None, 
                        no_css=False,
-                       playwright=False):
+                       playwright=False,
+                       only_html=False,
+                       api_pdf=False):
     # import pudb; pudb.set_trace()
 # Launch Playwright with Chromium
     # if not skip_browser:
+    css_content = None
 
     if not skip_browser:
         with sync_playwright() as p:
@@ -90,14 +95,21 @@ def convert_url_to_pdf(url,
             page = browser.new_page()
 
             # for url in urls:
-            print(f"Goint to {url}")
+            print(f"Going to {url}")
             page.goto(url)
             body_dimensions = page.evaluate("document.body.getBoundingClientRect()")
             height = body_dimensions['height']
             width = body_dimensions['width']
 
-            print("Received body dimensions")
-            print(body_dimensions)
+            if css and not(no_css):
+                print("Applying CSS file to html!")
+                with open(css, 'r') as file:
+                    css_content = file.read()
+
+                page.add_style_tag(content=css_content)
+
+            # Wait for the page to load and CSS to take effect
+            page.wait_for_timeout(1000)
 
             html = page.content()
             if playwright:
@@ -125,7 +137,24 @@ def convert_url_to_pdf(url,
 
             browser.close()
 
+            if only_html:
+                print("Returning due to only html")
+                return
+            
+    file_name = output
+    if not file_name:
+        file_name = url.split('/')[-1] + ".pdf"
+
+    if output_dir:
+        file_name = f"{output_dir}/{file_name}"
         # print(html)
+    if api_pdf:
+        convertapi.api_secret = 'dNvBZAcxdvSXWYjD'
+        convertapi.convert('pdf', {
+            'File': 'page.html'
+        }, from_format = 'html').save_files(file_name)
+
+        return
 
     options = {
         # 'page-width': f'{width}px',
@@ -138,26 +167,23 @@ def convert_url_to_pdf(url,
         'enable-local-file-access': ""
         }
     
-    print('Option passed to pdfkit')
-    print(options)
+    # print('Option passed to pdfkit')
+    # print(options)
 
-    print('CSS provided to pdfkit')
-    print(css)
+    # print('CSS provided to pdfkit')
+    # print(css)
 
-    file_name = output
-    if not file_name:
-        file_name = url.split('/')[-1] + ".pdf"
 
-    if output_dir:
-        file_name = f"{output_dir}/{file_name}"
 
     try:
-        if no_css:
-            print("Generating PDF without CSS modification")
-            pdfkit.from_file('page.html', file_name, options=options, verbose=True)
-        else:
-            print(f"Generating PDF with CSS modification from {css}")
-            pdfkit.from_file('page.html', file_name, options=options, css=css, verbose=True)
+        # if no_css:
+        print("Generating PDF without CSS modification")
+        print(f"Output file: {file_name}")
+        pdfkit.from_file('page.html', file_name, options=options, verbose=True)
+        # else:
+        #     print(f"Generating PDF with CSS modification from {css}")
+        #     print(f"Output file: {file_name}")
+        #     pdfkit.from_file('page.html', file_name, options=options, css=css, verbose=True)
     except OSError as e:
         print(f"Error while generating PDF: {e}, we will continue! Good luck!")
 
@@ -200,7 +226,7 @@ def prase_pdf_with_llama_index(pdf_path):
 
     else:
         file_extractor = {".pdf": parser}
-        documents = SimpleDirectoryReader(pdf_path, file_extractor=file_extractor).load_data()
+        documents = SimpleDirectoryReader(pdf_path, recursive=True, file_extractor=file_extractor).load_data()
 
 
     import pudb; pudb.set_trace()
@@ -246,6 +272,36 @@ def parse_js_crwaler_json(document):
     url_list = [d['url'] for d in document_list]
     return url_list
 
+
+def parse_yaml_and_convert_files(yaml_file, css, company):
+
+    with open(yaml_file, 'r') as file:
+        yaml_content = yaml.safe_load(file)
+
+    for section in yaml_content:
+        for section_name, section_content in section.items():
+            output_dir = f"{company}/{section_name}"
+            os.makedirs(output_dir, exist_ok=True)
+
+            pdf_engine = section_content['pdf_engine']
+            auto_pdf_engine = True if pdf_engine == "auto" else False
+            for link in section_content['links'].split(" "):
+
+                if link.endswith("json"):
+                    links = parse_js_crwaler_json(link)
+                    for i in links:
+                        convert_url_to_pdf(i, 
+                                           output=None,
+                                           api_pdf=auto_pdf_engine, 
+                                           css=css,
+                                           output_dir=output_dir)
+                    continue
+
+                convert_url_to_pdf(link, 
+                                   output=None,
+                                   api_pdf=auto_pdf_engine, 
+                                   css=css,
+                                   output_dir=output_dir)
 
 
 def convert_with_pdfratpr():
@@ -309,11 +365,13 @@ def convert_with_pdfratpr():
 
 
   
-# 
+# The role of this script is to get list of URL's (Can be) 
 @click.command()
 @click.argument('urls', type=str, nargs=-1, required=False)
 @click.option('-c', '--company', type=click.STRING, required=False,
               help='Company to genereate PDF for')
+@click.option('--css', type=click.STRING, required=False,
+              help='Specific CSS to use for generation')
 @click.option('-o', '--output', type=click.STRING, required=False,
               help='Company to genereate PDF for')
 @click.option('-s', '--skip-browser', type=click.BOOL, is_flag=True, default=False,
@@ -322,20 +380,38 @@ def convert_with_pdfratpr():
               help='Opening the debugger')
 @click.option('--no-css', type=click.BOOL, is_flag=True, default=False,
               help='Opening the debugger')
+@click.option('--only-html', type=click.BOOL, is_flag=True, default=False,
+              help='Just create the HTML')
 @click.option('--playwright', type=click.BOOL, is_flag=True, default=False,
               help='Generate PDF with Playwright')
 @click.option('-l', '--llama-parse', type=click.STRING, required=False,
               help='Generating PDF with llama parse, just a checking')
 @click.option('-s', '--summarize', type=click.STRING, required=False,
               help='Generating PDF with llama parse, just a checking')
-def click_cli_main(urls, company, output, skip_browser, debug, no_css, playwright, llama_parse, summarize):
+@click.option('-a', '--api-pdf', type=click.BOOL, is_flag=True, default=False,
+              help='Generate PDf with the API')
+def click_cli_main(urls,            # List of URL's to convert or a configuration file
+                   company,         # Company to generate PDF
+                   output,          # The name of the output file
+                   skip_browser,    # Skip the browser, use the current page.html
+                   debug,           # Openning PUDB at the start of the script 
+                   css,             # Specific CSS file to use
+                   no_css,          # No-css modifidication on the HTML
+                   playwright,      # Download the PDF from playwright
+                   llama_parse,     # Use llama_parse to convert PDF's to Markdown
+                   summarize,       # Summarization of all the files into one file for Opus
+                   only_html,       # Only download the HTML and quit
+                   api_pdf):        # Use PDF API to convert the HTML to PDF
+
     if debug:
         import pudb; pudb.set_trace()
 
+    # This is the case in which we want to take markdown & json and merge between them
     if summarize:
         prepare_folder_for_summarization(summarize)
         return
 
+    # This is the case where we're taking data into llama parse
     if llama_parse:
         prase_pdf_with_llama_index(llama_parse)
         return
@@ -351,12 +427,15 @@ def click_cli_main(urls, company, output, skip_browser, debug, no_css, playwrigh
     if urls:
         url_list = urls
 
-
-    if not(url_list[0].startswith("http")):
+    if (url_list[0].endswith("json")):
         # It's a local file
         url_list = parse_js_crwaler_json(url_list[0])
-        
-    
+
+    if (url_list[0].endswith("yaml")):
+        if not company:
+            raise Exception("No company provided with yaml")
+        # It's a local file
+        parse_yaml_and_convert_files(url_list[0], css, company)
 
     for url in url_list:
         convert_url_to_pdf(url, 
@@ -365,7 +444,9 @@ def click_cli_main(urls, company, output, skip_browser, debug, no_css, playwrigh
                             output=output, 
                             css=css,
                             no_css=no_css,
-                            playwright=playwright)
+                            playwright=playwright,
+                            only_html=only_html,
+                            api_pdf=api_pdf)
     # print(f"PDF generated at {output}")
 
 

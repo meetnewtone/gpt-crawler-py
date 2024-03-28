@@ -1,0 +1,42 @@
+
+body > footer {
+    display: none;
+}
+
+body > div.animation-scroll.what-would-you-like-to-do-wrapper.show-scroll > div {
+    display: none;
+}
+
+#contact-block-wrapper {
+    display: none;
+}
+
+
+#navbar > div {
+    display: none;
+}
+
+
+#contact-block-wrapper > span {
+    display: none;
+}
+
+#panels-ipe-paneid-265401 {
+    display: none;
+}
+
+#block-menu-menu-what-would-you-like-to-do- > div {
+    display: none;
+}
+
+#panels-ipe-paneid-225374 > div.background-images-wrapper > div {
+    display: none;
+}
+
+#panels-ipe-paneid-225374 {
+    display: none;
+}
+
+body > div.animation-scroll.what-would-you-like-to-do-wrapper.show-scroll {
+    display: none;
+}
