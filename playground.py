@@ -225,19 +225,28 @@ def prase_pdf_with_llama_index(pdf_path):
         documents = parser.load_data(pdf_path)
 
     else:
-        file_extractor = {".pdf": parser}
-        documents = SimpleDirectoryReader(pdf_path, recursive=True, file_extractor=file_extractor).load_data()
+        required_exts = [".pdf"]
+        print("Strart document extrattions")
+        file_extractor = {".pdf": parser} # This will take everything for the parser, but we should ignore
+        documents = SimpleDirectoryReader(pdf_path, 
+                                          recursive=True, 
+                                          file_extractor=file_extractor,
+                                          required_exts=required_exts).load_data()
 
+    print("Done with document extractions")
 
-    import pudb; pudb.set_trace()
-
+    try:
     
-
+        for d in documents:
+            file_name = d.metadata['file_name']
+            with open(f"qwak/{file_name}.md", 'w') as file:
+                    file.write(d.to_json())
     
-    # for d in documents:
-    #     file_name = d.metadata['file_name']
-    #     with open(f"{company}/{file_name}.md", 'w') as file:
-    #             file.write(d.to_json())
+    except Exception as e:
+        print("Encountered an error")
+        print(e)
+        import pudb;pudb.set_trace()
+        pass
 
 
 def prepare_folder_for_summarization(path):
