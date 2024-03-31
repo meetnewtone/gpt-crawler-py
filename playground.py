@@ -13,7 +13,9 @@ nest_asyncio.apply()
 
 # CATO_SELECTOR = "#b-product-page-content-boxes-1 > section > div.b-product-page-content-boxes__list.container > article"
 EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
-LLAMA_INDEX_API_KEY = "llx-LfEhUzGZDtDfnWnZMibUyUq69CRf6XURjre6ARUDBh32FTm8"
+# LLAMA_INDEX_API_KEY = "llx-LfEhUzGZDtDfnWnZMibUyUq69CRf6XURjre6ARUDBh32FTm8"
+LLAMA_INDEX_API_KEY = "llx-4VoAUrUHCRA5o7NEdosEe6lAdHep1Xf7rKIug125lYtsDISn"
+CONVERT_API_KEY = "yfC2O2Fbw1s1aRND" # Zubilevi
 
 
 ### Some commands related to PDF converstion
@@ -62,7 +64,7 @@ COMPANY = {
         'default_url': QWAK_URL
     },
     'cato': {
-        'default_css': 'cato_blog.css',
+        'default_css': 'cato.css',
         'default_url': CATO_BLOG
     },
 }
@@ -82,7 +84,8 @@ def convert_url_to_pdf(url,
                        no_css=False,
                        playwright=False,
                        only_html=False,
-                       api_pdf=False):
+                       api_pdf=False,
+                       respect_viewport=True):
     # import pudb; pudb.set_trace()
 # Launch Playwright with Chromium
     # if not skip_browser:
@@ -143,15 +146,27 @@ def convert_url_to_pdf(url,
             
     file_name = output
     if not file_name:
-        file_name = url.split('/')[-1] + ".pdf"
+        if url.endswith("/"):
+            file_name = url.split('/')[-2] + ".pdf"
+        else:
+            file_name = url.split('/')[-1] + ".pdf"
 
     if output_dir:
         file_name = f"{output_dir}/{file_name}"
         # print(html)
     if api_pdf:
-        convertapi.api_secret = 'dNvBZAcxdvSXWYjD'
+        print("Generating PDF with API")
+        print(f"Output file: {file_name}")
+
+        respect_viewport_str = 'true' if respect_viewport else 'false'
+
+        convertapi.api_secret = CONVERT_API_KEY
         convertapi.convert('pdf', {
-            'File': 'page.html'
+            'File': 'page.html',
+            'AdBlock': 'true',
+            'LoadLazyContent': 'true',
+            'CookieConsentBlock': 'true',
+            'RespectViewport': respect_viewport_str,
         }, from_format = 'html').save_files(file_name)
 
         return
@@ -177,7 +192,7 @@ def convert_url_to_pdf(url,
 
     try:
         # if no_css:
-        print("Generating PDF without CSS modification")
+        print("Generating PDF...")
         print(f"Output file: {file_name}")
         pdfkit.from_file('page.html', file_name, options=options, verbose=True)
         # else:
@@ -212,7 +227,7 @@ def soup_extractor(html, selectors):
     return new_html
 
 
-def prase_pdf_with_llama_index(pdf_path):
+def prase_pdf_with_llama_index(pdf_path, company=None):
     parser = LlamaParse(
         api_key=LLAMA_INDEX_API_KEY,  # can also be set in your env as LLAMA_CLOUD_API_KEY
         result_type="markdown",  # "markdown" and "text" are available
@@ -236,10 +251,14 @@ def prase_pdf_with_llama_index(pdf_path):
     print("Done with document extractions")
 
     try:
-    
         for d in documents:
             file_name = d.metadata['file_name']
-            with open(f"qwak/{file_name}.md", 'w') as file:
+            if company:
+                file_path = f"{company}/{file_name}.md"
+            else:
+                file_path = f"{file_name}.md"                
+
+            with open(file_path, 'w') as file:
                     file.write(d.to_json())
     
     except Exception as e:
@@ -256,13 +275,19 @@ def prepare_folder_for_summarization(path):
         if file.endswith(".md"): # This is a file from llama parse, in json
             with open(os.path.join(path, file), 'r') as f:
                 content = json.load(f)
-                summary_dict[file] = content["text"]
+                summary_dict[file[:-3]] = content["text"]
 
         if file.endswith(".json"): # This is what we got from the crawler
             with open(os.path.join(path, file), 'r') as f:
                 content = json.load(f)
             for document in content:
-                summary_dict[document['title']] = document['html']
+                url = document['url']
+                if url.endswith("/"):
+                    title = url.split('/')[-2] + ".pdf"
+                else:
+                    title = url.split('/')[-1] + ".pdf"
+                # Getting the document name
+                summary_dict[title] = document['html']
 
     with open(os.path.join(path, "summary.json"), 'w') as f:
         json.dump(summary_dict, f, indent=4)
@@ -292,8 +317,14 @@ def parse_yaml_and_convert_files(yaml_file, css, company):
             output_dir = f"{company}/{section_name}"
             os.makedirs(output_dir, exist_ok=True)
 
-            pdf_engine = section_content['pdf_engine']
+            pdf_engine = section_content.get('pdf_engine', False)
+            respect_viewport = section_content.get('respect_viewport', True)
             auto_pdf_engine = True if pdf_engine == "auto" else False
+
+            print(f"Generating PDF for {section_name}")
+            print(f"Output directory: {output_dir}")
+            print(f"Respect viewport: {respect_viewport}")
+            print(f"PDF Engine: {pdf_engine}")  
             for link in section_content['links'].split(" "):
 
                 if link.endswith("json"):
@@ -303,14 +334,25 @@ def parse_yaml_and_convert_files(yaml_file, css, company):
                                            output=None,
                                            api_pdf=auto_pdf_engine, 
                                            css=css,
-                                           output_dir=output_dir)
+                                           output_dir=output_dir,
+                                           respect_viewport=respect_viewport)
                     continue
 
                 convert_url_to_pdf(link, 
                                    output=None,
                                    api_pdf=auto_pdf_engine, 
                                    css=css,
-                                   output_dir=output_dir)
+                                   output_dir=output_dir,
+                                   respect_viewport=respect_viewport)
+                
+
+def get_chroma_collection(collection):
+    import chromadb
+    client = chromadb.HttpClient(host='40.65.121.170')
+    collection = client.get_collection(collection)
+    collection_data = collection.get()
+    print(collection_data['ids']) # Get the documents it based on
+
 
 
 def convert_with_pdfratpr():
@@ -399,6 +441,8 @@ def convert_with_pdfratpr():
               help='Generating PDF with llama parse, just a checking')
 @click.option('-a', '--api-pdf', type=click.BOOL, is_flag=True, default=False,
               help='Generate PDf with the API')
+@click.option('--collection', type=click.STRING, default=None,
+              help='Generate PDf with the API')
 def click_cli_main(urls,            # List of URL's to convert or a configuration file
                    company,         # Company to generate PDF
                    output,          # The name of the output file
@@ -410,10 +454,15 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
                    llama_parse,     # Use llama_parse to convert PDF's to Markdown
                    summarize,       # Summarization of all the files into one file for Opus
                    only_html,       # Only download the HTML and quit
-                   api_pdf):        # Use PDF API to convert the HTML to PDF
+                   api_pdf,        # Use PDF API to convert the HTML to PDF
+                   collection):
 
     if debug:
         import pudb; pudb.set_trace()
+
+    if collection:
+        get_chroma_collection(collection)
+        return
 
     # This is the case in which we want to take markdown & json and merge between them
     if summarize:
@@ -445,6 +494,8 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
             raise Exception("No company provided with yaml")
         # It's a local file
         parse_yaml_and_convert_files(url_list[0], css, company)
+        prase_pdf_with_llama_index(pdf_path=company, company=company)
+        return
 
     for url in url_list:
         convert_url_to_pdf(url, 

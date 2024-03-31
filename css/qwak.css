@@ -80,6 +80,10 @@ body > div.page-wrapper > main > section:nth-child(2) > div.container-small.w-co
     display: none;
 }
 
+body > div.page-wrapper > main > section:nth-child(2) > div.container-small.w-container > div > div {
+    display: none;
+}
+
 #w-node-_36b4e5b2-a68c-2d21-a0bf-a3cdd2d8d70e-6937a833 {
     display: none;
 }
