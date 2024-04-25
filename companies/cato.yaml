@@ -1,0 +1,35 @@
+# - platform: 
+#     pdf_engine: auto
+#     respect_viewport: false
+#     links: cato/resources/cato-platform.json
+
+- blog:
+    links: cato/resources/cato-blog.json
+    
+- sase:
+    pdf_engine: auto
+    links:
+        https://www.catonetworks.com/sase/
+        https://www.catonetworks.com/sase/why-cato/
+
+- use-cases-glossary-cve-mitigationn:
+    pdf_engine: auto
+    links: 
+        https://www.catonetworks.com/use-cases/
+        https://www.catonetworks.com/rapid-cve-mitigation/
+        https://www.catonetworks.com/glossary/
+
+
+- learn:
+    pdf_engine: auto
+    links: 
+        https://www.catonetworks.com/zero-trust-network-access/
+        https://www.catonetworks.com/sd-wan/
+        https://www.catonetworks.com/network-firewall/
+        https://www.catonetworks.com/intrusion-prevention-system/
+        https://www.catonetworks.com/network-security/
+        https://www.catonetworks.com/what-is-mpls/
+        https://www.catonetworks.com/secure-remote-access/
+
+
+    

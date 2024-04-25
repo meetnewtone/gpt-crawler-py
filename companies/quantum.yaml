@@ -1,0 +1,104 @@
+
+- blogs:
+    pdf_engine: manual
+    links:
+      # https://www.quantum-machines.co/blog/opx1000-new-microware-module-boosts-quantum-computing/
+      # https://www.quantum-machines.co/blog/direct-digital-synthesis-for-large-scale-quantum-computers/
+      # https://www.quantum-machines.co/blog/finally-a-practical-way-to-benchmark-quantum-controllers/
+      # https://www.quantum-machines.co/blog/quantum-machines-announces-deep-quantum-classical-integration-to-power-quantum-accelerated-supercomputers-with-nvidia/
+      # https://www.quantum-machines.co/blog/controlling-1000-qubits-how-to-scale-quantum-computing/
+      # https://www.quantum-machines.co/blog/hot-spin-qubits-pushing-for-fault-tolerant-quantum-computing/
+      # https://www.quantum-machines.co/blog/advanced-model-learning-algorithms-to-improve-quantum-gates/
+      # https://www.quantum-machines.co/blog/feedback-driven-quantum-stabilization-two-axis-real-time-control-of-spin-qubits/
+      # https://www.quantum-machines.co/blog/aps-march-meeting-2024-quantum-machines-scientific-lineup/
+      # https://www.quantum-machines.co/blog/quantum-machines-products-now-available-through-oxford-instruments-nanoscience-for-streamlined-purchasing/
+      # https://www.quantum-machines.co/blog/qm-introduces-quantum-electronics-solutions-qdac-and-qswitch/
+      # https://www.quantum-machines.co/blog/quantum-computing-predictions-for-2024/
+      # https://www.quantum-machines.co/blog/quantum-machines-2023-review/
+      # https://www.quantum-machines.co/blog/bridging-quantum-realms-a-silicon-based-electromechanical-interface-for-extended-phonon-lifetimes/
+      # https://www.quantum-machines.co/blog/shining-a-light-on-qec-controller-requirements-the-crucial-role-of-fast-classical-processing-for-quantum-computation-with-quantum-error-correction/
+      # https://www.quantum-machines.co/blog/qdevil-a-division-of-quantum-machines-niels-bohr-institute-and-ku-tech-transfer-office-honored-with-2024-technology-transfer-prize-by-the-german-physical-society/
+      # https://www.quantum-machines.co/blog/quantum-machines-and-quera-computing-win-bird-foundation-award/
+      # https://www.quantum-machines.co/blog/enhancing-quality-factors-of-t-antalum-superconducting-resonators-with-qcage/
+      # https://www.quantum-machines.co/blog/a-quantum-revolution-in-electron-charge-qubits/
+      # https://www.quantum-machines.co/blog/revolutionizing-single-spin-detection-with-esr-spectroscopy-and-advanced-quantum-control/
+      # https://www.quantum-machines.co/blog/welcome-opx1000/
+      # https://www.quantum-machines.co/blog/two-qubits-randomized-benchmarking-made-simple/
+      # https://www.quantum-machines.co/blog/quantum-control-made-easy/
+      # https://www.quantum-machines.co/blog/quantum-control-to-space-battles/
+      https://www.quantum-machines.co/blog/quantum-machines-forges-partnerships-with-leading-korean-research-investment-groups/
+      https://www.quantum-machines.co/blog/women-quantum-computing-anasua-chatterjee/
+      https://www.quantum-machines.co/blog/quantum-machines-and-quantware-partner-to-offer-integrated-quantum-control-qpu-solutions/
+      https://www.quantum-machines.co/blog/worlds-heaviest-schrodingers-cat-states-achieved-thanks-to-advanced-quantum-control/
+      https://www.quantum-machines.co/blog/5-qubit-advancements-that-bring-practical-quantum-computing-closer-to-reality/
+      https://www.quantum-machines.co/blog/qbridge-a-universal-integration-software-solution-for-hpc-and-quantum-computers/
+      https://www.quantum-machines.co/blog/mid-circuit-measurements-landed-on-neutral-atoms-thanks-to-advanced-quantum-control/
+      https://www.quantum-machines.co/blog/women-pushing-the-limits-of-quantum-computing-carmen-almudever/
+      https://www.quantum-machines.co/blog/quantum-computing-for-hpc-is-coming-dont-let-vendor-silos-screw-it-up/
+      https://www.quantum-machines.co/blog/one-little-push-at-a-time-quantum-trajectories-and-weak-measurements/
+      https://www.quantum-machines.co/blog/quantum-machines-selected-by-alice-and-bob-for-their-advanced-quantum-computer/
+      https://www.quantum-machines.co/blog/pushing-the-boundaries-of-quantum-computing-alice-bob-x-quantum-machines/
+      https://www.quantum-machines.co/blog/women-pushing-the-limits-of-quantum-computing-olivia-lanes/
+      https://www.quantum-machines.co/blog/quantum-machines-releases-quantum-chip-carrier-for-seamless-high-fidelity-integration/
+      https://www.quantum-machines.co/blog/why-electrical-qubit-control-will-revolutionize-quantum-computing/
+      https://www.quantum-machines.co/blog/practical-quantum-computing-why-advanced-quantum-control-holds-the-key/
+      https://www.quantum-machines.co/blog/quantum-machines-2022-review-pushing-quantum-computing-to-new-heights/
+      https://www.quantum-machines.co/blog/aps-march-2023-qm-scientific-lineup/
+      https://www.quantum-machines.co/blog/2022-year-in-review-quantum-research-highlights-from-our-customers/
+      https://www.quantum-machines.co/blog/how-well-does-chatgpt-understand-quantum-computing-lets-find-out/
+      https://www.quantum-machines.co/blog/quantum-control-the-key-to-achieving-qubit-scalability/
+      https://www.quantum-machines.co/blog/your-advanced-quantum-control-just-got-upgraded/
+      https://www.quantum-machines.co/blog/why-openqasm3-will-transform-the-quantum-dev-world/
+      https://www.quantum-machines.co/blog/time-to-result-randomized-benchmarking-with-advanced-quantum-control/
+      https://www.quantum-machines.co/blog/quantum-machines-to-partner-on-the-euryqa-project/
+      https://www.quantum-machines.co/blog/quantum-machines-at-ieee-quantum-week-2022-scientific-program/
+      https://www.quantum-machines.co/blog/hybrid-quantum-classical-computation-with-real-time-execution/
+      https://www.quantum-machines.co/blog/quantum-machines-selected-to-build-israels-national-quantum-computing-center/
+      https://www.quantum-machines.co/blog/toyota-tsusho-partners-with-quantum-machines-to-provide-quantum-solutions-for-japanese-market%ef%bf%bc/
+      https://www.quantum-machines.co/blog/quantum-matter-2022-quantum-machines-scientific-line-up/
+      https://www.quantum-machines.co/blog/life-at-qm-meet-ramon-szmuk-product-manager/
+      https://www.quantum-machines.co/blog/aps-damop-2022-quantum-machines-scientific-line-up/
+      https://www.quantum-machines.co/blog/running-quantum-experiments-from-day-one-a-fresh-pov-for-lab-managers/
+      https://www.quantum-machines.co/blog/introduction-to-digital-filters-02-correcting-iirregularities/
+      https://www.quantum-machines.co/blog/life-at-qm-meet-tamar-ben-haim-sembira-software-architectural-modeling-engineer/
+      https://www.quantum-machines.co/blog/world-quantum-day-adventures-in-quantum-control/
+      https://www.quantum-machines.co/blog/european-institutions-announce-research-project-to-develop-neural-networks-for-quantum-error-correction/
+      https://www.quantum-machines.co/blog/life-at-qm-meet-zohar-eshed-director-of-operations/
+      https://www.quantum-machines.co/blog/dungeons-qubits-ramsey-and-frequency-tracking/
+      https://www.quantum-machines.co/blog/quantum-machines-acquires-qdevil/
+      https://www.quantum-machines.co/blog/qm-march-madness/
+      https://www.quantum-machines.co/blog/the-processor-designed-for-quantum-control/
+      https://www.quantum-machines.co/blog/life-at-qm-meet-sharen-blank-chip-design-engineer/
+      https://www.quantum-machines.co/blog/quantum-machines-announces-octave/
+      https://www.quantum-machines.co/blog/quantum-machines-announces-hadamard/
+      https://www.quantum-machines.co/blog/aps-march-meeting-2022-quantum-machines-workshops/
+      https://www.quantum-machines.co/blog/aps-march-meeting-2022-quantum-machines-all-star-lineup/
+      https://www.quantum-machines.co/blog/women-pushing-the-limits-of-quantum-frontiers-ziwei-qiu/
+      https://www.quantum-machines.co/blog/women-pushing-the-limits-of-quantum-frontiers-yvonne-gao/
+      https://www.quantum-machines.co/blog/women-pushing-the-limits-of-quantum-frontiers-inbar-zohar/
+      https://www.quantum-machines.co/blog/women-pushing-the-limits-of-quantum-frontiers-yiwen-chu/
+      https://www.quantum-machines.co/blog/quantum-machines-2021-wrap-up/
+      https://www.quantum-machines.co/blog/understanding-a-superconducting-qubit-readout-with-qua/
+      https://www.quantum-machines.co/blog/paving-the-path-to-near-term-quantum-advantage-with-qop/
+      https://www.quantum-machines.co/blog/an-ode-to-virtual-conferences-ieee-qce-2021/
+      https://www.quantum-machines.co/blog/quantum-machines-adds-qualcomm-ventures-to-investor-list/
+      https://www.quantum-machines.co/blog/https-www-quantum-machines-co-blog-increasing-qubit-initialization-fidelity-with-qua/
+      https://www.quantum-machines.co/blog/quantum-machines-ieee-qce-2021/
+      https://www.quantum-machines.co/blog/quantum-machines-raises-50-million/
+      https://www.quantum-machines.co/blog/introduction-to-digital-filters-01-first-things-first/
+      https://www.quantum-machines.co/blog/quantum-machines-joins-race-to-create-error-corrected-qubits/
+      https://www.quantum-machines.co/blog/active-reset-fast-feedback-dynamic-decisions/
+      https://www.quantum-machines.co/blog/machine-learning-for-quantum-processing-how-to-run-real-time-neural-networks/
+      https://www.quantum-machines.co/blog/a-novice-quantum-programmers-guide-to-qua/
+      https://www.quantum-machines.co/blog/aps-march-meeting-2021-and-quantum-machines-tune-in-to-our-scientific-program/
+      https://www.quantum-machines.co/blog/keep-your-finger-on-the-pulse-with-qua-a-pulse-level-quantum-programming-language/
+      https://www.quantum-machines.co/blog/how-will-quantum-computers-evolve/
+      https://www.quantum-machines.co/blog/future-of-quantum-computing-quantum-experts-panel/
+      https://www.quantum-machines.co/blog/q-ctrl-and-quantum-machines-announce-partnership-to-accelerate-quantum-computing-development/
+      https://www.quantum-machines.co/blog/quantum-machines-recognized-as-a-cool-vendor-in-gartners-june-2020-cool-vendors-in-quantum-computing/
+      https://www.quantum-machines.co/blog/quantum-machines-announces-qua-as-first-standard-universal-language-for-quantum-computers/
+      https://www.quantum-machines.co/blog/quantum-machines-raises-17-5m-as-it-powers-the-global-quantum-computing-race/
+      https://www.quantum-machines.co/blog/quantum-machines-joins-the-ibm-q-network/
+      https://www.quantum-machines.co/blog/quantum-machines-raises-5-5-million-to-develop-next-generation-of-systems-for-quantum-computers/
+
+                

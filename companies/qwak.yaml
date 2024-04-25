@@ -1,4 +1,31 @@
+# - compare: 
+#     pdf_engine: auto
+#     links: qwak/resources/qwak-compare-1.json
+
+# - case studes:
+#     pdf_engine: auto
+#     links: qwak/resources/qwak-case-studies.json
+    
+# - platform_and_solutions_and_integrations:
+#     pdf_engine: auto
+#     links:
+#         https://www.qwak.com/platform/model-registry
+#         https://www.qwak.com/platform/model-registry
+#         https://www.qwak.com/platform/model-training
+#         https://www.qwak.com/platform/model-serving
+#         https://www.qwak.com/platform/model-monitoring
+#         https://www.qwak.com/platform/feature-store
+#         https://www.qwak.com/platform/vector-store
+#         https://www.qwak.com/platform/feature-vector-pipeline
+#         https://www.qwak.com/platform/managed-notebooks
+#         https://www.qwak.com/solutions/llm
+#         https://www.qwak.com/solutions/recommender-systems
+#         https://www.qwak.com/solutions/search-ranking
+#         https://www.qwak.com/solutions/fraud-detection
+#         https://www.qwak.com/integrations
 
 
-- blogs
-  
+    
+- qwak documentation:
+    pdf_engine: auto
+    links: qwak/resources/qwak-documentation.json
