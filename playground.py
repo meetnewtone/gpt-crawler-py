@@ -13,9 +13,9 @@ nest_asyncio.apply()
 
 # CATO_SELECTOR = "#b-product-page-content-boxes-1 > section > div.b-product-page-content-boxes__list.container > article"
 EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
-# LLAMA_INDEX_API_KEY = "llx-LfEhUzGZDtDfnWnZMibUyUq69CRf6XURjre6ARUDBh32FTm8"
-LLAMA_INDEX_API_KEY = "llx-4VoAUrUHCRA5o7NEdosEe6lAdHep1Xf7rKIug125lYtsDISn"
-CONVERT_API_KEY = "yfC2O2Fbw1s1aRND" # Zubilevi
+LLAMA_INDEX_API_KEY = "llx-LfEhUzGZDtDfnWnZMibUyUq69CRf6XURjre6ARUDBh32FTm8"
+# LLAMA_INDEX_API_KEY = "llx-4VoAUrUHCRA5o7NEdosEe6lAdHep1Xf7rKIug125lYtsDISn"
+CONVERT_API_KEY = "QI1KE8SGqz9nfCF2" # ProjectOhs
 
 # BROWSER = sync_playwright().start().chromium.launch(headless=True, executable_path=EXECUTABLE_PATH)
 
@@ -155,18 +155,22 @@ def convert_url_to_pdf(url,
         print(f"Output file: {file_name}")
 
         respect_viewport_str = 'true' if respect_viewport else 'false'
-
-        respect_viewport = 'true'
-
         convertapi.api_secret = CONVERT_API_KEY
         
+        print(f"Respect Viewport: {respect_viewport_str}")
         convertapi.convert('pdf', {                                                                                                
             'Url': url,                                                                                                            
             'CookieConsentBlock': 'true',                                                                                          
             'UserCss': css_content,                                                                                                   
-            'LoadLazyContent': 'true',                                                                                             
-            'MarginLeft': '0',                                                                                                     
-            'MarginRight': '0'                                                                                                     
+            'LoadLazyContent': 'true',     
+            'ConversionDelay': '1',
+            #  'RespectViewport':respect_viewport_str,
+             'RespectViewport':'false',
+                 'FixedElements': 'relative',
+
+                                                                           
+            # 'MarginLeft': '0',                                                                                                     
+            # 'MarginRight': '0'                                                                                                     
         }, from_format = 'web').save_files(file_name)
 
         return
@@ -243,7 +247,8 @@ def soup_extractor(html, selectors):
     return new_html
 
 
-def prase_pdf_with_llama_index(pdf_path, company=None):
+def prase_pdf_with_llama_index(pdf_path, company):
+
     parser = LlamaParse(
         api_key=LLAMA_INDEX_API_KEY,  # can also be set in your env as LLAMA_CLOUD_API_KEY
         result_type="markdown",  # "markdown" and "text" are available
@@ -252,17 +257,39 @@ def prase_pdf_with_llama_index(pdf_path, company=None):
         language="en" # Optionaly you can define a language, default=en
     )
 
-    if not(os.path.isdir(pdf_path)):
-        documents = parser.load_data(pdf_path)
+    file_paths = [
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/What-to-consider-before-renewing-your-SD-WAN-license-or-service.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/What_to_expect_when_expecting_SASE.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Which_SSE_Can_Replace_All_of_Your_Physical_Firewall.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Whitepaper SASE Planning 10.6.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Why is SD-WAN Considered a Top Choice Among VPN Alternatives_3.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Why_should_remote_access_be_a_network_and_security_collaboration_project.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Win_8_IT_Projects_with_SASE.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Your-First-100-Days-as-CIO-5-Steps-to-Success.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gartner_magic_quadrrant_single_vendor_sase.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gartner_strategic_roadmap.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-enterprise-firewalls-230922-cato-networks.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-secure-access-service-edge-sase-230911-catonetworks.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-secure-service-access-ssa-226672-catonetworks.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-software-defined-wide-area-networks-253841-catonetworks.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/security-qarterly-report-2022-H2.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/survey-2021.pdf",
+"/Users/omriperi/Project/gpt-crawler-py/cato/gated/the-5-step-action-plan-to-becoming-CISO.pdf"
+]
 
-    else:
-        required_exts = [".pdf"]
-        print("Strart document extrattions")
-        file_extractor = {".pdf": parser} # This will take everything for the parser, but we should ignore
-        documents = SimpleDirectoryReader(pdf_path, 
-                                          recursive=True, 
-                                          file_extractor=file_extractor,
-                                          required_exts=required_exts).load_data()
+    documents = parser.load_data(file_paths)
+
+    # if not(os.path.isdir(pdf_path)):
+    #     documents = parser.load_data(pdf_path)
+
+    # else:
+    #     required_exts = [".pdf"]
+    #     print("Strart document extrattions")
+    #     file_extractor = {".pdf": parser} # This will take everything for the parser, but we should ignore
+    #     documents = SimpleDirectoryReader(pdf_path, 
+    #                                       recursive=True, 
+    #                                       file_extractor=file_extractor,
+    #                                       required_exts=required_exts).load_data()
 
     print("Done with document extractions")
 
@@ -322,7 +349,7 @@ from vectordb.chroma.jina_embedding import JinaEmbedder
 
 config = ChromaConfig(
     host="40.65.121.170",
-    collection_name="quantum",
+    collection_name="layerx",
     ranking=CohereRanker(
         model="rerank-english-v2.0",
         trial_keys= [
@@ -407,14 +434,14 @@ def parse_yaml_and_convert_files(yaml_file, css, company):
                                    respect_viewport=respect_viewport)
                 
 
-def get_chroma_collection(collection):
+def get_chroma_collection(collection_name):
     import chromadb
     client = chromadb.HttpClient(host='40.65.121.170')
-    collection = client.get_collection(collection)
+    collection = client.get_collection(collection_name)
     collection_data = collection.get()
     print(collection_data['ids']) # Get the documents it based on
     document_structure = creating_claude_xml(collection_data)
-    with open(f"{collection}.txt", 'w') as file:
+    with open(f"collection-{collection_name}.txt", 'w') as file:
         file.write(document_structure)
 
 
@@ -582,7 +609,7 @@ def summarize_specific_file_llama(file_name, content):
     endpoint = 'https://api.together.xyz/v1/chat/completions'
     res = requests.post(endpoint, json={
         "model": "meta-llama/Llama-3-70b-chat-hf",
-        "max_tokens": 4000,
+        "max_tokens": 484,
         "temperature": 0,
         "top_p": 0.7,
         "top_k": 50,
@@ -603,6 +630,7 @@ def summarize_specific_file_llama(file_name, content):
     if res.status_code != 200:
         print("Error happened in summarization of")
         print(file_name)
+        print(res.content)
         return None
     
     decoded_response = json.loads(res.content.decode(), strict=False)
@@ -617,6 +645,7 @@ def summarize_specific_file_llama(file_name, content):
     return summary_clean
 
 
+# Takes all the markdowns and creates a summary
 def summarize_with_llama(markdown_folder):
     files = os.listdir(markdown_folder)
     markdown_files = [file for file in files if file.endswith(".md")]
@@ -633,10 +662,21 @@ def summarize_with_llama(markdown_folder):
         result = summarize_specific_file_llama(markdown[:-3], md_content['text'])
 
         if result is None:
+            with open("missing-files.txt", 'a') as file:
+                file.write(markdown[:-3])
+                file.write("\n")
+                file.write("------\n")
+                file.write(md_content['text'])
+                file.write("------\n")
+
             continue
 
         with open(f"{markdown_folder}/{markdown}-bulletpints", 'w') as file:
             file.write(result)
+
+        with open(f"{markdown_folder}/summary.txt", 'a') as file:
+            file.write(f"{result}\n")
+
 
 
 
@@ -677,7 +717,7 @@ def parse_images(image_folder):
         import base64
 
         AWS_ACCESS_KEY = ''
-        AWS_SECRET_KEY = ''
+        AWS_SECRET_KEY = 'q'
         AWS_REGION = 'us-west-2'
         ANTROPHIC_MODEL = "anthropic.claude-3-sonnet-20240229-v1:0"
 
@@ -763,7 +803,42 @@ def extract_images(pdf_directory):
         # Close the PDF file
         pdf.close()
 
+# Extracting links from 
+def extract_links_from_crawler(file_path):
+    import json
 
+    with open(file_path, 'r') as file:
+        link_list = json.load(file)
+
+    for file in link_list:
+        print(file['url'])
+
+
+def remove_lines_from_pdf():
+    pass
+# In [8]: with open('reprints?id=1-2G2V1C8T&ct=231229&st=sb.pdf', 'rb') as file:
+#    ...:     # Create a PDF reader object
+#    ...:     reader = PyPDF2.PdfReader(file)
+#    ...:
+#    ...:     # Create a new PDF writer object
+#    ...:     writer = PyPDF2.PdfWriter()
+#    ...:
+#    ...:     # Iterate over the pages in the input PDF
+#    ...:     for page_num in range(len(reader.pages)):
+#    ...:         # Check if the current page should be included
+#    ...:         if page_num  in range(44,61):  # Exclude pages 1, 3, and 5
+#    ...:             # Get the page object
+#    ...:             page = reader.pages[page_num]
+#    ...:             # Add the page to the writer object
+#    ...:             writer.add_page(page)
+#    ...:
+#    ...:     # Open the output PDF file in write-binary mode
+#    ...:     with open('output.pdf', 'wb') as output_file:
+#    ...:         # Write the modified PDF to the output file
+#    ...:         writer.write(output_file)
+#    ...:
+#    ...: print("PDF pages removed successfully!")
+    
   
 # The role of this script is to get list of URL's (Can be) 
 @click.command()
@@ -802,6 +877,10 @@ def extract_images(pdf_directory):
               help='Try all the methods for converting PDF')
 @click.option('--collection', type=click.STRING, default=None,
               help='Generate PDf with the API')
+@click.option('--extract-links', type=click.STRING, default=None,
+              help='Generate PDf with the API')
+@click.option('-v', '--viewport', type=click.BOOL, is_flag=True, default=False,
+              help='Try all the methods for converting PDF')
 def click_cli_main(urls,            # List of URL's to convert or a configuration file
                    company,         # Company to generate PDF
                    output,          # The name of the output file
@@ -819,7 +898,9 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
                    images_manual,
                    everything,
                    llama,
-                   parse_image): # Try all the methods to export PDF
+                   parse_image,
+                   extract_links,
+                   viewport): # Try all the methods to export PDF
 
     if debug:
         import pudb; pudb.set_trace()
@@ -827,7 +908,11 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
     if collection:
         get_chroma_collection(collection)
         return
-
+    
+    if extract_links:
+        extract_links_from_crawler(extract_links)
+        return
+        
     # This is the case in which we want to take markdown & json and merge between them
     if summarize:
         prepare_folder_for_summarization(summarize)
@@ -835,7 +920,7 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
 
     # This is the case where we're taking data into llama parse
     if llama_parse:
-        prase_pdf_with_llama_index(llama_parse)
+        prase_pdf_with_llama_index(llama_parse, company)
         return
     
     if llama:
@@ -892,7 +977,8 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
                             playwright=playwright,
                             only_html=only_html,
                             api_pdf=api_pdf,
-                            everything=everything)
+                            everything=everything,
+                            respect_viewport=not(viewport))
     # print(f"PDF generated at {output}")
 
 

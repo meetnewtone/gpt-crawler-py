@@ -72,3 +72,13 @@ body > div.wrapper > div > div.c-announcement-bar.c-announcement-bar--bottom.c-a
 #b-accordion-1 > div > div.c-background__image.c-background__image--desktop-tablet.c-background__image--desktop-mobile.c-background__image--desktop {
     display: none;
 }
+
+/* GigaOm */
+
+#wrapper-navbar {
+    display: none;
+}
+
+#wrapper-footer {
+    display: none;
+}
