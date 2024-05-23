@@ -1,0 +1,20 @@
+body > header {
+    display: none;
+}
+
+body > article > div > div.more__blog__posts.w-dyn-list {
+    display: none;
+}
+
+body > footer {
+    display: none;
+}
+
+#editorInbox > a.button__primary.subscribe.w-button {
+    display: none;
+}
+
+#editorInbox > a.button__3rd.auto__mar.w-button {
+    display: none;
+}
+

@@ -1,0 +1,121 @@
+# - products: 
+#     pdf_engine: auto
+#     links:
+#         https://www.orca-ai.io/seapod/
+#         https://www.orca-ai.io/fleetview/
+
+# - prs: 
+#     pdf_engine: auto
+#     links: 
+#         https://www.orca-ai.io/resource/orca-ai-partners-with-northstandard-to-offer-safety-benefits-of-situational-awareness-platform/
+#         https://www.orca-ai.io/resource/2023-safety-and-efficiency-gains/
+#         https://www.orca-ai.io/resource/orca-ai-launches-next-gen-seapod-watchkeeping-unit/
+#         https://www.orca-ai.io/resource/orca-ai-sets-new-milestone-with-first-naval-partnership/
+#         https://www.orca-ai.io/resource/second-phase-autonomous-ship-project/
+#         https://www.orca-ai.io/resource/orca-ai-to-enter-distribution-deal-with-marubeni/
+#         https://www.orca-ai.io/resource/after-reducing-close-encounter-incidents-by-25-the-tms-group-partners-with-orca-ai-to-automate-navigation-and-enhance-fleet-safety/
+#         https://www.orca-ai.io/resource/nyk-upgrades-its-fleet-with-orca-ai-technology-to-enhance-navigation-safety-and-operational-efficiency/
+#         https://www.orca-ai.io/resource/orca-ais-automated-situational-awareness-platform-reduced-close-encounter-events-by-more-than-25-for-100-customer-vessels-in-2022/
+#         https://www.orca-ai.io/resource/american-roll-on-roll-off-carrier-arc-and-liberty-maritime-corp-liberty-partner-with-orca-ai-to-drive-safer-and-more-efficient-operations/
+#         https://www.orca-ai.io/resource/orca-ai-joins-one-sea-as-associations-global-footprint-continues-to-grow/
+#         https://www.orca-ai.io/resource/orca-ai-to-provide-fleet-navigation-safety-platform-to-maran-tankers-management/
+#         https://www.orca-ai.io/resource/worlds-first-autonomous-commercial-ship-voyage-in-congested-water-successfully-completed/
+#         https://www.orca-ai.io/resource/orca-ai-receives-world-first-abs-pda-for-ai-based-navigation-safety-platform/
+#         https://www.orca-ai.io/resource/orca-ai-appoints-industry-leaders-to-its-advisory-board-2/
+#         https://www.orca-ai.io/resource/latsco-partners-with-orca-ai-to-increase-fleet-navigation-safety-2/
+#         https://www.orca-ai.io/resource/nyk-and-orca-ai-to-create-new-safety-support-systems-for-autonomous-vessels/
+#         https://www.orca-ai.io/resource/north-pi-club-partners-with-petredec-and-orca-ai-to-reduce-marine-insurance-costs/
+#         https://www.orca-ai.io/resource/autonomous-marine-navigation-startup-orca-ai-raises-13million-series-a/
+
+# - blog:
+#     pdf_engine: auto
+#     links: 
+#         https://www.orca-ai.io/blog/from-data-to-action-the-role-of-ai-in-interpreting-nautical-information/
+#         https://www.orca-ai.io/blog/roi-exploration-quantifying-the-impact-of-ai-on-shipping-efficiency/
+#         https://www.orca-ai.io/blog/embracing-connectivity-in-maritime-to-achieve-decarbonization/
+#         https://www.orca-ai.io/blog/guide-to-maritime-autonomous-shipping-terms/
+#         https://www.orca-ai.io/blog/exploring-artificial-intelligence-in-maritime-industry/
+#         https://www.orca-ai.io/blog/benefit-of-adopting-maritime-autonomous-navigation-systems/
+#         https://www.orca-ai.io/blog/seapod-the-advanced-digital-watchkeeper-for-safer-navigation/
+#         https://www.orca-ai.io/blog/2023-a-year-of-robust-growth/
+#         https://www.orca-ai.io/blog/orca-ai-wins-smart4sea-europort-technology-award-2023/
+#         https://www.orca-ai.io/blog/orca-ai-shortlisted-for-smart4sea-europort-technology-award/
+    
+- news:
+    pdf_engine: not-auto
+    links:
+        # https://bnnbreaking.com/tech/orca-ai-develops-ai-powered-early-warning-system-for-ships-amid-yemen-crisis
+        # https://www.calcalistech.com/ctechnews/article/rkzfitvtc
+        # https://www.hellenicshippingnews.com/american-roll-on-roll-off-carrier-arc-and-liberty-maritime-corp-partner-with-orca-ai/
+        # https://www.hellenicshippingnews.com/ai-tech-is-key-to-protecting-whales-from-deadly-collisions-with-ships/
+        # https://www.hellenicshippingnews.com/orca-ai-appoints-industry-leaders-to-its-advisory-board/
+        # https://www.hellenicshippingnews.com/why-ai-is-a-first-responder-for-overloaded-crews-in-shippings-toughest-era-yet/
+        # https://lloydslist.maritimeintelligence.informa.com/LL1145449/Navigation-safety-trial-morphs-into-living-lab-for-AI-platform
+        # https://lloydslist.maritimeintelligence.informa.com/LL1144354/Advanced-technology-is-only-as-good-as-the-partnership-it-supports?vid=Maritime&processId=42978530-706f-48d7-b76f-950f37bf2dc3
+        # https://www.linkedin.com/company/orca-ai/mycompany/?viewAsMember=true
+        https://www.lloydslist.com/LL1148527/NorthStandard-partners-with-navigational-safety-start-up-Orca-AI
+        https://www.lloydslist.com/LL1148433/Orca-AI-has-eyes-on-autonomous-navigation
+        https://magazines.marinelink.com/nwm/MarineNews/202107/#page/21
+        https://www.marinelink.com/news/opinon-tackling-houthi-drone-threat-ai-510861
+        https://www.marinelink.com/news/maritime-safety-finds-a-future-cloud-509142
+        https://www.marinelink.com/news/orca-ai-participate-second-phase-507640
+        https://www.marinelink.com/videos/video/clearing-the-path-100724
+        https://www.marinelink.com/news/ai-pivotal-future-autonomous-shipping-490075
+        https://www.marinelog.com/perspectives/op-eds/op-ed-why-automation-is-the-viable-solution-to-crew-shortages/
+        https://maritime-executive.com/article/top-insurer-subsidizes-use-of-ai-navigation-safety-tool
+        https://maritime-executive.com/editorials/a-whole-new-orbit-why-shipping-should-embrace-the-connectivity-boom
+        https://maritime-executive.com/article/japanese-autonomous-navigation-project-moves-to-second-phase-demonstrations
+        https://maritime-executive.com/corporate/how-shell-and-orca-ai-work-together-to-drive-innovation-in-navigation
+        https://maritime-executive.com/article/study-ai-situational-awareness-system-reduces-close-encounters
+        https://maritime-executive.com/corporate/orca-ai-to-provide-navigation-safety-platform-for-maran-tankers
+        https://www.maritime-executive.com/corporate/orca-ai-drives-co2-reduction-across-267-vessel-fleet-in-2023
+        https://www.maritime-executive.com/corporate/orca-ai-unveils-new-version-of-seapod-digital-watchkeeping-unit
+        https://www.maritime-executive.com/features/it-s-time-shipping-companies-leverage-technology-to-save-whales
+        https://www.maritime-executive.com/corporate/latsco-partners-with-orca-ai-to-increase-fleet-navigation-safety
+        https://www.maritime-executive.com/editorials/op-ed-technology-is-the-solution-to-the-supply-chain-crisis
+        https://www.maritimejournal.com/equipment/viewpoint-the-importance-of-automation-for-safety/1482561.article
+        http://maritimemag.com/en/nyk-and-orca-ai-partner-on-safety-research-for-autonomous-vessels/
+        https://monocle.com/magazine/the-entrepreneurs/5/top-25-entrepreneurs-part-one/
+        https://monocle.com/radio/shows/the-entrepreneurs/eureka-249/play/
+        https://asia.nikkei.com/Business/Technology/AI-camera-steers-ships-away-from-collisions-in-fog-and-darkness
+        https://www.rivieramm.com/news-content-hub/how-ai-tackles-shipping-chaos-and-prevents-accidents-66439
+        https://safety4sea.com/digitalization-of-the-bridge-a-boon-or-a-bane-for-seafarers/
+        https://safety4sea.com/orca-ai-becomes-member-of-one-sea/
+        https://www.seatrade-maritime.com/technology/bridge-personnel-vote-yes-digital-watch-keeping-system
+        https://www.ship-technology.com/news/tms-group-hooks-orca-ai-for-automated-navigation/
+        https://www.ship-technology.com/news/nyk-to-adopt-orca-ai-autonomous-tech/
+        https://www.ship-technology.com/features/artificial-intelligence-to-the-rescue-assisting-the-shipping-container-crisis/
+        https://www.ship-technology.com/features/innovations-in-maritime-navigation-software/
+        https://www.ship-technology.com/features/navigating-the-oceans-with-help-from-ai-qa-with-orca-ai/
+        https://news.sky.com/story/uks-economy-shrinks-recruitment-issues-and-autonomous-ships-12611238
+        https://www.smartindustry.com/blog/smart-industry-connect/the-future-of-ai-in-the-shipping-industry/
+        https://splash247.com/orca-ai-speeding-up-the-evolution-of-shippings-digitalisation-journey/
+        https://www.swedishclub.com/media_upload/files/Publications/Triton/Triton_3_2021_WEB.pdf
+        https://techcrunch.com/2021/04/21/orca-ai-which-puts-computer-vision-onto-cargo-ships-raises-13m-series-a-funding/
+        https://techmgzn.com/orca-ai-to-save-lives-with-its-collision-avoidance-system-for-ships/
+        https://thedigitalship.com/news/electronics-navigation/item/8496-orca-ai-enters-distribution-deal-with-marubeni
+        https://www.thedigitalship.com/news/electronics-navigation/item/8704-orca-ai-sets-new-milestone-with-first-naval-partnership
+        https://www.thedigitalship.com/news/electronics-navigation/item/7854-cargo-ship-completes-790km-autonomous-voyage
+        https://www.thedigitalship.com/news/electronics-navigation/item/7744-orca-ai-receives-pda-for-ai-based-navigation-platform
+        https://www.thedigitalship.com/news/maritime-software/item/7306-orca-ai-petredec-and-north-p-i-team-up-on-data-model-to-reduce-marine-insurance-costs
+        https://www.theguardian.com/environment/2023/apr/09/whales-killed-passing-ships-save-alert-detection
+        https://theuncontained.com/articles/full/ai-bringing-ai-to-vessel-navigation
+        https://www.tradewindsnews.com/technology/slow-to-digitalise-quick-to-save-86-000-why-marubeni-has-an-eye-for-fleet-digitalisation/2-1-1635604
+        https://www.tradewindsnews.com/technology/how-elon-musk-s-starlink-is-fuelling-digital-transformation-at-seaspan-corp/2-1-1632614
+        https://www.tradewindsnews.com/insurance/insurer-northstandard-turns-to-ai-in-bid-to-improve-navigational-safety/2-1-1611196
+        https://www.tradewindsnews.com/technology/up-at-3am-with-the-baby-the-challenging-story-behind-an-automated-voyage/2-1-1466145
+        https://www.tradewindsnews.com/opinion/comment-is-shipping-automation-ready-for-everything-everywhere-all-at-once-/2-1-1465796
+        https://www.tradewindsnews.com/business-focus/watch-keeping-cameras-are-the-eyes-and-algorithms-the-brain-as-orca-looks-to-automate-navigation/2-1-1410647
+        https://www.tradewindsnews.com/opinion/maritime-must-ditch-analogue-for-digital-if-it-is-to-keep-casualties-in-check/2-1-1198656
+        https://www.tradewindsnews.com/technology/automation-can-help-but-shipping-cannot-automate-out-of-a-labour-shortage/2-1-1096176
+        https://uk.news.yahoo.com/my-first-boss-dor-raviv-shipping-orca-ai-074920719.html
+        https://hansa.news/orca-ai-keeps-watch-on-the-future/
+        https://www-businesstimes-com-sg.cdn.ampproject.org/c/s/www.businesstimes.com.sg/international/look-no-hands-autonomous-ship-coming-closer?amp
+        https://seanews.co.uk/technology/new-ai-based-watchkeeper-technology-enhances-maritime-safety-and-security/
+        https://seanews.co.uk/features/bringing-maritime-training-into-the-21st-century-how-to-upskill-an-inexperienced-crew/
+        https://techround.co.uk/interviews/meet-yarden-gross-orca-ai/
+        https://rina.org.uk/publications/the-naval-architect/artificial-intelligence-steers-orca-ais-autonomous-maritime-odyssey/
+        
+
+
+    

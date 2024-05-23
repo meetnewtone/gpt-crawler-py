@@ -1,0 +1,28 @@
+
+#__next > div > main > div > div.content-block.text-center.text-white.py-12.lg\:py-16.bg-blue {   
+    display: none;
+}
+
+#__next > div > footer {   
+    display: none;
+}
+
+#__next > div > main > div > div.bg-grey.relative > div.container--full.relative.pb-16.lg\:pb-20 {   
+    display: none;
+}
+
+#header-inner {
+    display: none;
+}
+
+#__next > div > div > div {
+    display: none;
+}
+
+#__next > div > main > div > div.blog-header > div.blog-header__image.relative > div.container.mx-auto > div > a {
+    display: none;
+}
+
+#__next > div > main > div > div.back-page.container.mx-auto {
+    display: none;
+}

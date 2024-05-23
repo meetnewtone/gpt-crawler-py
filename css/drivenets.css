@@ -1,0 +1,43 @@
+#header {
+    display: none;
+}
+
+body > section.bp > div > main > div.bp-download.d-flex {
+    display: none;
+}
+
+body > footer {
+    display: none;
+}
+
+body > div.inner-footer {
+    display: none;
+}
+
+body > footer {
+    display: none;
+}
+
+body > section.bp > div > main > div.bp-download.d-flex {
+    display: none;
+}
+
+#CybotCookiebotDialog > div {
+    display: none;
+}
+
+#CybotCookiebotDialog {
+    display: none;
+}
+
+body > section.bp > div > aside {
+    display: none;
+}
+
+body > section.bp > div > main > div.bp-main-text > div.bp-main-lines {
+    display: none;
+}
+
+body > section.bp > div > main > div.bp-download.d-flex {
+    display: none;
+}

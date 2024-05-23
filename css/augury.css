@@ -82,15 +82,3 @@ body > div.wrapper > div > div.c-announcement-bar.c-announcement-bar--bottom.c-a
 #wrapper-footer {
     display: none;
 }
-
-body > section.bp > div > aside {
-    display: none;
-}
-
-body > footer {
-    display: none;
-}
-
-body > section.bp > div > main > div.bp-download.d-flex {
-    display: none;
-}

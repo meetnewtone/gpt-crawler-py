@@ -1,0 +1,204 @@
+# - platform: 
+#     pdf_engine: auto
+#     respect_viewport: false
+#     links: cato/resources/cato-platform.json
+# Case Studies Downloaded Already
+
+- education:
+    pdf_engine: auto
+    links:
+        https://drivenets.com/resources/white-paper/which-network-architecture-is-right-for-you/
+        https://drivenets.com/resources/education-center/what-is-a-core-router/
+        https://drivenets.com/resources/education-center/what-is-cloud-native-networking/
+        https://drivenets.com/resources/education-center/what-is-data-center-interconnect-dci/
+        https://drivenets.com/resources/education-center/what-is-ai-workload/
+        https://drivenets.com/resources/education-center/what-is-network-orchestration/
+        https://drivenets.com/resources/education-center/what-is-network-edge/
+        https://drivenets.com/resources/education-center/what-is-distributed-disaggregated-chassis-ddc/
+        https://drivenets.com/resources/education-center/what-is-network-high-availability/
+        https://drivenets.com/resources/education-center/what-is-ai-networking/
+        https://drivenets.com/resources/education-center/what-is-a-core-network/
+        https://drivenets.com/resources/education-center/what-is-network-infrastructure/
+        https://drivenets.com/resources/education-center/what-is-multiservice-network-architecture/
+        https://drivenets.com/resources/education-center/what-is-network-disaggregation/
+        https://drivenets.com/resources/education-center/what-is-network-disaggregation
+        https://drivenets.com/resources/education-center/what-is-network-transformation/
+        https://drivenets.com/resources/education-center/what-is-network-peering/
+        https://drivenets.com/resources/education-center/what-is-cable-multiple-systems-operators-mso/
+
+
+- blog:
+    pdf_engine: auto
+    links:
+        # https://drivenets.com/blog/cloud-network/what-is-drivenets-network-cloud/
+        # https://drivenets.com/blog/2024-ocp-regional-summit-my-takeaways/
+        # https://drivenets.com/blog/best-practices-ddc-cable-management/
+        # https://drivenets.com/blog/key-takeaways-from-mpls-sd-ai-net-world-2024/
+        # https://drivenets.com/blog/ai-networking-options-smart-nics-vs-scheduled-fabric/
+        # https://drivenets.com/blog/whats-happening-with-ai-networking-the-uec/
+        # https://drivenets.com/blog/nvidia-gtc-2024-networking-is-cool-again/
+        # https://drivenets.com/blog/clearing-confusion-about-ddc-for-ai/
+        # https://drivenets.com/blog/why-drivenets-can-lead-in-ethernet-based-ai-networking/
+        # https://drivenets.com/blog/standalone-when-you-can-cluster-when-you-must/
+        # https://drivenets.com/blog/mwc-2024-telco-ai-and-more-ai/
+        # https://drivenets.com/blog/transforming-network-infrastructure-digi-deploys-drivenets-network-cloud/
+        # https://drivenets.com/blog/how-the-telecom-industry-can-regain-its-innovative-edge/
+        # https://drivenets.com/blog/5-benefits-of-ddc-for-mso-networks/
+        # https://drivenets.com/blog/collapsing-network-layers-reshapes-network-architecture/
+        # https://drivenets.com/blog/breaking-the-ceiling-part-3/
+        # https://drivenets.com/blog/overcome-challenges-at-the-telco-edge/
+        # https://drivenets.com/blog/what-does-2024-have-for-networking/
+        # https://drivenets.com/blog/2023-modernizing-the-network/
+        # https://drivenets.com/blog/network-brightness-on-the-edge-of-town/
+        # https://drivenets.com/blog/network-disaggregation-shifts-the-balance-of-power-to-service-providers/
+        # https://drivenets.com/blog/network-disaggregation-deployment-operation-maintenance-made-simple/
+        # https://drivenets.com/blog/white-box-networking-makes-service-providers-more-versatile/
+        # https://drivenets.com/blog/a-dream-come-true-for-the-service-provider-supply-chain/
+        # https://drivenets.com/blog/why-are-service-providers-rethinking-network-architecture/
+        # https://drivenets.com/blog/network-cloud-ai-from-theory-to-practice/
+        # https://drivenets.com/blog/distributed-disaggregated-chassis-ddc-architecture-for-cable-mso-aggregation-networks/
+        # https://drivenets.com/blog/ai-networking-moves-ahead-with-drivenets-and-broadcom-jericho3-ai/
+        # https://drivenets.com/blog/drivenets-contribution-to-the-latest-version-of-the-ocp-ddc-standard-is-accepted/
+        # https://drivenets.com/blog/ai-sparks-change-for-mso-networks/
+        # https://drivenets.com/blog/comcasts-operational-value-from-ddc-architecture/
+        # https://drivenets.com/blog/cloud-network/what-is-drivenets-network-cloud/
+        # https://drivenets.com/blog/comcasts-operational-value-from-ddc-architecture/
+        # https://drivenets.com/blog/3-takeaways-from-the-ai-hardware-edge-ai-summit-event/
+        # https://drivenets.com/blog/panel-recap-next-generation-system-design-for-maximizing-ml-performance/
+        # https://drivenets.com/blog/crafting-tailored-networks-with-flex-algo/
+        # https://drivenets.com/blog/can-you-really-compare-clos-to-chassis-when-running-ai-applications/
+        # https://drivenets.com/blog/the-service-provider-dilemma-to-update-or-not-to-update/
+        # https://drivenets.com/blog/which-network-architecture-is-right-for-you/
+        # https://drivenets.com/blog/one-network-doesnt-fit-all/
+        # https://drivenets.com/blog/people-behind-drivenets-peter-cucinell/
+        # https://drivenets.com/blog/up-beyond-the-evolution-of-network-operating-systems/
+        # https://drivenets.com/blog/a-robust-fabric-failure-recovery-in-ddc/
+        # https://drivenets.com/blog/creating-lossless-connectivity-fabric-with-ddc/
+        # https://drivenets.com/blog/reduce-ai-job-completion-time-with-ddc/
+        # https://drivenets.com/blog/from-legacy-to-innovation-kddi-deploys-drivenets-network-cloud/
+        # https://drivenets.com/blog/why-infiniband-falls-short-of-ethernet-for-ai-networking/
+        # https://drivenets.com/blog/get-back-to-basics-to-overcome-service-provider-fear-of-change/
+        # https://drivenets.com/blog/drivenets-enters-ai-networking-market-expected-to-exceed-10b-by-2027/
+        # https://drivenets.com/blog/the-next-network-bottleneck/
+        # https://drivenets.com/blog/may-the-fourth-be-with-your-network/
+        # https://drivenets.com/blog/people-behind-drivenets-shunsuke-sasaki/
+        # https://drivenets.com/blog/network-cloud-large-deployments-lessons-learned-part-1/
+        # https://drivenets.com/blog/3-7m-tco-savings-per-site-with-disaggregated-routing-architecture/
+        # https://drivenets.com/blog/people-behind-drivenets-juan-rodriguez/
+        # https://drivenets.com/blog/an-outside-in-view-of-network-high-availability/
+        # https://drivenets.com/blog/the-powers-that-be/
+        # https://drivenets.com/blog/people-behind-drivenets-calin-miculescu/
+        # https://drivenets.com/blog/talking-about-disaggregated-cloud-native-networking-at-mwc-2023/
+        # https://drivenets.com/blog/what-is-drivenets-network-cloud/
+        # https://drivenets.com/blog/can-networking-infrastructure-adapt-at-scale/
+        # https://drivenets.com/blog/the-people-behind-drivenets-jade-mansour/
+        # https://drivenets.com/blog/cloud-network/what-is-drivenets-network-cloud/
+        # https://drivenets.com/blog/what-is-the-value-of-network-hardware-consistency/
+        # https://drivenets.com/blog/the-people-behind-drivenets-ryan-donnelly/
+        # https://drivenets.com/blog/how-does-network-innovation-improve-the-operational-experience/
+        # https://drivenets.com/blog/what-does-2023-hold-for-the-telecoms-industry/
+        # https://drivenets.com/blog/2022-changing-the-networking-industry/
+        # https://drivenets.com/blog/last-christmas-for-a-network-engineer/
+        # https://drivenets.com/blog/oops-we-did-it-again-what-makes-drivenets-the-company-of-the-year/
+        # https://drivenets.com/blog/true-network-elasticity-only-a-dream/
+        # https://drivenets.com/blog/fan-of-sequels-ddc-v2-makes-network-operations-even-simpler/
+        # https://drivenets.com/blog/why-i-hate-it-when-my-vendor-is-losing-money/
+        # https://drivenets.com/blog/how-to-choose-your-next-carrier-grade-networking-vendor/
+        # https://drivenets.com/blog/fusing-components-into-network-solutions-at-fyuz/
+        # https://drivenets.com/blog/networking-nightmares/
+        # https://drivenets.com/blog/cost-avoidance-and-cost-savings-with-drivenets-network-cloud/
+        # https://drivenets.com/blog/make-your-procurement-team-shine-with-drivenets-network-cloud/
+        # https://drivenets.com/blog/your-next-network-outage-can-be-shorter/
+        # https://drivenets.com/blog/disaggregations-future/
+        # https://drivenets.com/blog/is-there-an-afterlife-following-the-end-of-life-notice/
+        # https://drivenets.com/blog/it-nt-ct-a-new-type-of-skill-set/
+        # https://drivenets.com/blog/the-emergence-of-the-new-network-edge/
+        # https://drivenets.com/blog/being-spotted-on-the-gigaom-radar/
+        # https://drivenets.com/blog/why-the-cloud-doesnt-matter/
+        # https://drivenets.com/blog/network-sustainability-bites/
+        # https://drivenets.com/blog/scaling-out-your-network-without-headaches-by-scaling/
+        # https://drivenets.com/blog/dont-let-your-network-end-up-just-a-dumb-pipe/
+        # https://drivenets.com/blog/do-you-have-a-woodpecker-in-your-network/
+        # https://drivenets.com/blog/telecom-tv-panel-explores-disaggregated-networking/
+        # https://drivenets.com/blog/how-disaggregation-won/
+        # https://drivenets.com/blog/5-takeaways-from-mwc-22/
+        # https://drivenets.com/blog/5g-is-there-a-killer-app-on-the-loose/
+        # https://drivenets.com/blog/cloud-network/what-is-drivenets-network-cloud/
+        # https://drivenets.com/blog/network-capacity-and-service-growth-the-struggle/
+        # https://drivenets.com/blog/dont-settle-make-a-difference/
+        # https://drivenets.com/blog/from-concept-to-disruption-the-evolution-of-drivenets/
+        # https://drivenets.com/blog/recap-nfd-sp/
+        # https://drivenets.com/blog/how-network-demand-almost-stole-christmas/
+        # https://drivenets.com/blog/are-you-in-control-of-your-network/
+        # https://drivenets.com/blog/skillset-evolution-are-you-ready/
+        # https://drivenets.com/blog/test-yourself-are-you-an-innovative-service-provider/
+        # https://drivenets.com/blog/cars-and-networks-the-industries-under-disruption/
+        # https://drivenets.com/blog/another-validation-for-building-networks-like-cloud/
+        # https://drivenets.com/blog/ncnf-rethinking-the-relationship-between-hosted-functions-and-the-network/
+        # https://drivenets.com/blog/radical-network-change-from-future-plans-to-actual-deployment/
+        # https://drivenets.com/blog/a-slice-of-cloud-implementing-network-slicing-with-network-cloud/
+        # https://drivenets.com/blog/how-to-read-a-sponsored-tco-analysis/
+        # https://drivenets.com/blog/network-cloud-vs-monolithic-solutions/
+        # https://drivenets.com/blog/introducing-drivenets-training-certification/
+        # https://drivenets.com/blog/its-the-data-plane-stupid/
+        # https://drivenets.com/blog/how-can-you-enhance-your-networking-skillset/
+        # https://drivenets.com/blog/what-is-network-cloud/
+        # https://drivenets.com/blog/building-an-open-network-with-channel-partners/
+        # https://drivenets.com/blog/highly-available-network-infrastructure/
+        # https://drivenets.com/blog/becoming-the-industry-standard/
+        # https://drivenets.com/blog/400gbps-is-the-new-100gbps/
+        # https://drivenets.com/blog/unified-infrastructure-for-a-best-of-breed-network/
+        # https://drivenets.com/blog/new-ncp-white-box-excites-the-entire-village/
+        # https://drivenets.com/blog/building-a-network-cloud-in-four-steps/
+        # https://drivenets.com/blog/disaggregated-routing-and-the-multiservice-network-cloud/
+        # https://drivenets.com/blog/new-open-grid-alliance-aims-to-rearchitect-the-internet/
+        # https://drivenets.com/blog/turn-the-network-into-a-profit-center-by-building-networks-like-cloud/
+        # https://drivenets.com/blog/monolithic-architectures-inefficiency-are-resource-utilization-walls/
+        # https://drivenets.com/blog/cloud-network/what-is-drivenets-network-cloud/
+        # https://drivenets.com/blog/is-tco-analysis-yesterdays-measure-for-networking-success/
+        # https://drivenets.com/blog/analysys-mason-networks-disaggregation-is-a-reality-for-csps-ip-networks/
+        # https://drivenets.com/blog/nfd-24-drivenets-recap-a-broad-portfolio-of-networking-use-cases/
+        # https://drivenets.com/blog/strategic-cfos-see-operational-value-in-network-cloud/
+        # https://drivenets.com/blog/a-recap-of-networking-field-day-24/
+        # https://drivenets.com/blog/realize-the-operational-benefits-of-disaggregated-networks-and-make-your-coo-happy/
+        # https://drivenets.com/blog/growth-of-open-networking-bringing-disaggregated-networking-into-the-ocp/
+        # https://drivenets.com/blog/resolving-operator-challenges-finally/
+        # https://drivenets.com/blog/funding-the-growth-of-building-networks-like-cloud/
+        # https://drivenets.com/blog/twas-the-network-demand-before-christmas/
+        # https://drivenets.com/blog/new-management-experience-for-handling-the-disaggregated-network-architecture/
+        https://drivenets.com/blog/disaggregated-sp-router-market-strong-adoption-for-2021/
+        https://drivenets.com/blog/the-massive-networking-shift-to-disaggregation/
+        https://drivenets.com/blog/why-disaggregated-networks-need-orchestration/
+        https://drivenets.com/blog/talking-about-disaggregation/
+        https://drivenets.com/blog/disaggregation-is-transforming-high-scale-networks-now/
+        https://drivenets.com/blog/att-the-pandemic-and-a-disaggregated-core-router/
+        https://drivenets.com/blog/deployment-against-the-odds-networking-innovation-in-the-time-of-a-pandemic/
+        https://drivenets.com/blog/market-momentum-of-disaggregated-routing/
+        https://drivenets.com/blog/the-critical-steps-to-transform-cable-provider-networks-in-2021-and-beyond/
+        https://drivenets.com/blog/one-on-one-with-drivenets-ceo-ido-susan/
+        https://drivenets.com/blog/ensuring-smooth-deployment-for-the-disaggregated-model/
+        https://drivenets.com/blog/high-scale-network-disaggregation-busting-the-myths/
+        https://drivenets.com/blog/a-pre-pandemic-survey-on-telecom-networks-is-becoming-a-reality/
+        https://drivenets.com/blog/telco-edge-network-transformation/
+        https://drivenets.com/blog/disaggregation-is-not-enough-you-also-need-vendor-choice-and-open-architectures/
+        https://drivenets.com/blog/5-reasons-why-you-should-include-disaggregated-router-in-your-next-network-rfp/
+        https://drivenets.com/blog/whats-driving-service-providers-to-network-disaggregation/
+        https://drivenets.com/blog/why-we-are-a-cool-vendor-for-cloud-and-service-providers/
+        https://drivenets.com/blog/how-network-disaggregation-will-make-your-cfo-happy/
+        https://drivenets.com/blog/cloud-network/what-is-drivenets-network-cloud/
+        https://drivenets.com/blog/why-is-a-high-scale-disaggregated-router-so-attractive-to-csps/
+        https://drivenets.com/blog/bank-of-america-bofa-calls-white-box-routing-a-transformative-disruption/
+        https://drivenets.com/blog/join-drivenets-at-the-ocp-virtual-summit/
+        https://drivenets.com/blog/what-is-a-disaggregated-network-and-why-is-it-relevant-to-you/
+        https://drivenets.com/blog/running-networks-and-the-coronavirus/
+        https://drivenets.com/blog/how-we-overcame-the-challenges-and-developed-a-fully-distributed-network-operating-system/
+        https://drivenets.com/blog/the-challenge-of-developing-a-fully-distributed-network-operating-system/
+        https://drivenets.com/blog/zero-touch-provisioning-is-even-more-critical-for-disaggregated-networks-running-on-white-boxes/
+        https://drivenets.com/blog/opening-up-to-network-disaggregation-with-drivenets-and-kgpco/
+        https://drivenets.com/blog/drivenets-builds-networks-like-hyperscale-clouds/
+        https://drivenets.com/blog/a-recap-of-drivenets-at-networking-field-day/
+        https://drivenets.com/blog/learn-about-disaggregated-networks-high-availability-from-your-beagle/
+        https://drivenets.com/blog/drivenets-the-courage-to-disrupt/
+        https://drivenets.com/blog/why-disaggregation-is-penetrating-tier-1-providers/
+        https://drivenets.com/blog/nfv-tried-to-bring-the-network-to-the-cloud/
+

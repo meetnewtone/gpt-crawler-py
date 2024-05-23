@@ -1,0 +1,96 @@
+
+# - use-cases:
+#     pdf_engine: auto
+#     links:
+#       https://layerxsecurity.com/use-cases/web-dlp/
+#       https://layerxsecurity.com/use-cases/browser-extensions-protection/
+#       https://layerxsecurity.com/use-cases/chatgpt-dlp/
+#       https://layerxsecurity.com/use-cases/saas-protection/
+#       https://layerxsecurity.com/use-cases/safe-browsing/
+#       https://layerxsecurity.com/use-cases/secure-third-party-access/
+#       https://layerxsecurity.com/use-cases/vdi-alternative/
+#       https://layerxsecurity.com/use-cases/byod-protection/
+#       https://layerxsecurity.com/use-cases/secure-access/
+#       https://layerxsecurity.com/use-cases/identity-security-posture-management/
+
+# - learn:
+#     pdf_engine: auto
+#     respect_viewport: false
+#     links:
+#       https://layerxsecurity.com/learn/browser-security/
+#       https://layerxsecurity.com/learn/browser-isolation/
+#       https://layerxsecurity.com/learn/enterprise-browser/
+#       https://layerxsecurity.com/learn/chatbot-security-explained-a-comprehensive-guide/
+#       https://layerxsecurity.com/learn/chatgpt-security/
+#       https://layerxsecurity.com/learn/chatgpt-security/is-chatgpt-safe/
+#       https://layerxsecurity.com/learn/browser-security/chrome-extensions-management/
+#       https://layerxsecurity.com/learn/bard-security-risks-and-vulnerabilities-a-comprehensive-guide/
+#       https://layerxsecurity.com/learn/enterprise-browser/how-to-choose/
+#       https://layerxsecurity.com/learn/enterprise-browser/pros-and-cons/
+#       https://layerxsecurity.com/learn/browser-security/web-security/
+#       https://layerxsecurity.com/learn/browser-isolation/rbi/
+#       https://layerxsecurity.com/learn/browser-security/zero-trust-browser/
+#       https://layerxsecurity.com/learn/browser-isolation/virtual-browsers-explained/
+#       https://layerxsecurity.com/learn/browser-isolation/challenges-of-rbi/
+#       https://layerxsecurity.com/learn/browser-security/browser-exploits-explained/
+
+
+# - glossary:
+#     pdf_engine: auto
+#     respect_viewport: false
+#     links:
+#       https://layerxsecurity.com/glossary/what-is-an-endpoint-protection-platform/
+#       https://layerxsecurity.com/glossary/what-is-an-insider-threat/
+#       https://layerxsecurity.com/glossary/what-is-daas-desktop-as-a-services/
+#       https://layerxsecurity.com/glossary/what-is-zero-trust-edge/
+#       https://layerxsecurity.com/glossary/what-is-endpoint-detection-and-reponse-edr/
+#       https://layerxsecurity.com/glossary/what-is-sandboxing/
+#       https://layerxsecurity.com/glossary/what-is-ransomware/
+#       https://layerxsecurity.com/glossary/what-is-web-filtering/
+#       https://layerxsecurity.com/glossary/what-is-endpoint-security/
+#       https://layerxsecurity.com/glossary/what-is-dlp/
+#       https://layerxsecurity.com/glossary/what-is-smishing/
+#       https://layerxsecurity.com/glossary/what-is-account-takeover/
+#       https://layerxsecurity.com/glossary/what-is-vdi/
+#       https://layerxsecurity.com/glossary/what-is-credential-stuffing/
+#       https://layerxsecurity.com/glossary/what-is-saas-security/
+#       https://layerxsecurity.com/glossary/what-is-phishing/
+#       https://layerxsecurity.com/glossary/what-is-remote-work-security/
+#       https://layerxsecurity.com/glossary/what-is-secure-remote-access/
+#       https://layerxsecurity.com/glossary/what-is-casb-cloud-access-security-brokers-explained/
+#       https://layerxsecurity.com/glossary/what-is-swg/
+#       https://layerxsecurity.com/glossary/what-is-social-engineering/
+#       https://layerxsecurity.com/glossary/what-is-byod/
+#       https://layerxsecurity.com/glossary/what-is-password-reuse/
+
+- blogs:
+    pdf_engine: auto
+    respect_viewport: false
+    links:
+      https://layerxsecurity.com/blog/why-we-built-layerx/
+      https://layerxsecurity.com/blog/browser-isolation-out-browser-security-in/
+      https://layerxsecurity.com/blog/the-rise-of-phishing-and-how-to-protect-your-organization-from-advanced-attacks/
+      https://layerxsecurity.com/blog/reputation-based-security-is-not-working-what-now/
+      https://layerxsecurity.com/blog/the-dark-side-of-enterprise-browsers/
+      https://layerxsecurity.com/blog/mitigate-the-lastpass-attack-surface-in-your-environment-with-the-layerx-free-tool/
+      https://layerxsecurity.com/blog/2023-browser-security-annual-report-reveals-emerging-browsing-risks-and-blind-spots-that-security-teams-must-address/
+      https://layerxsecurity.com/blog/top-5-browsers-how-secure-are-they/
+      https://layerxsecurity.com/blog/malicious-iphone-application-distributed-using-sophisticated-desktop-malvertising-campaign/
+      https://layerxsecurity.com/blog/the-importance-of-browser-security-in-financial-companies/
+      https://layerxsecurity.com/blog/protecting-your-companys-data-crown-jewels-how-to-solve-chatgpt-security-risks-with-layerx-browser-security-platform/
+      https://layerxsecurity.com/blog/2023-browser-security-survey-report-key-findings/
+      https://layerxsecurity.com/blog/new-research-how-risky-is-genai-data-exposure-risk/
+      https://layerxsecurity.com/blog/cyber-security-risks-of-chatgpt-and-generative-ai-tools/
+      https://layerxsecurity.com/blog/how-to-detect-and-protect-your-business-from-phising-attacks/
+      https://layerxsecurity.com/blog/why-are-security-leaders-moving-from-browser-isolation-to-browser-security-extension-solutions/
+      https://layerxsecurity.com/blog/malicious-chrome-extensions-you-should-remove-from-your-browser/
+      https://layerxsecurity.com/blog/taming-the-wild-web-with-browser-security-a-cisos-perspective/
+      https://layerxsecurity.com/blog/secure-browsing-practices-for-your-business/
+      https://layerxsecurity.com/blog/shadow-it-in-the-hybrid-work-era/
+      https://layerxsecurity.com/blog/virtual-desktop-infrastructure-alternatives-you-should-consider/
+      https://layerxsecurity.com/blog/the-future-of-enterprise-browsers/
+      https://layerxsecurity.com/blog/the-importance-of-a-dlp-solution-for-your-enterprise/
+      https://layerxsecurity.com/blog/byod-alternatives-for-your-enterprise/
+      https://layerxsecurity.com/blog/malicious-browser-extensions-threats-and-security-solutions/
+      https://layerxsecurity.com/blog/what-is-url-filtering/
+      https://layerxsecurity.com/blog/what-is-shadow-it/

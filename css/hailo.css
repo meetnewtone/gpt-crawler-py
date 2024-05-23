@@ -1,0 +1,23 @@
+body > div.page__content > article > div.c-article__container.container > div.c-article__sidebar {
+    display: none;
+}
+
+body > div.page__content > article > div.c-article__foot {
+    display: none;
+}
+
+body > footer {
+    display: none;
+}
+
+body > footer {
+    display: none;
+}
+
+#contents {
+    display: none;
+}
+
+#b-short-hero-1 > div > div.c-background__content > div > div > ul {
+    display: none;
+}

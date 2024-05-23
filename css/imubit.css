@@ -1,0 +1,23 @@
+#et-boc > header {
+    display: none;
+}
+
+#main-content > div > div > div.et_pb_section.et_pb_section_2_tb_body.et_section_regular > div > div.et_pb_column.et_pb_column_1_3.et_pb_column_2_tb_body.et_pb_css_mix_blend_mode_passthrough.et-last-child {
+    display: none;
+}
+
+#main-content > div > div > div.et_pb_section.et_pb_section_4_tb_body.unlock-cta.et_pb_with_background.et_section_regular {
+    display: none;
+}
+
+#et-main-area > footer {
+    display: none;
+}
+
+#main-content > div > div > div.et_pb_section.et_pb_section_1_tb_body.page-title-banner.et_pb_with_background.et_section_regular {
+    display: none;
+}
+
+#post-1082 > div > div > div > div.et_pb_section.et_pb_section_10.unlock-cta.et_pb_with_background.et_section_regular {
+    display: none;
+}

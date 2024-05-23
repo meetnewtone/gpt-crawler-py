@@ -1,0 +1,19 @@
+#header { 
+    display: none;
+}
+
+#container > div > div > div.main-wrapper > div.newsletter-wrapper {
+    display: none;
+}
+
+#container > div > div > div.main-wrapper > div.author-wrapper {
+    display: none;
+}
+
+#container > div > div > div.related-wrapper {
+    display: none;
+}
+
+#footer {
+    display: none;
+}

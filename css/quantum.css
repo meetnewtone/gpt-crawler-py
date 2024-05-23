@@ -1,0 +1,23 @@
+#main > nav > div > div.navbar-top-bottom.background-white {
+    display: none;
+}
+
+#main > div > section.bottom-banner-wrapper > div > div {
+    display: none;
+}
+
+#main > div > div {
+    display: none;
+}
+
+#main > footer {
+    display: none;
+}
+
+#main > header > div {
+    display: none;
+}
+
+#cookies-notice {
+    display: none;
+}

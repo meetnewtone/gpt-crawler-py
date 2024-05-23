@@ -15,7 +15,8 @@ nest_asyncio.apply()
 EXECUTABLE_PATH="/opt/homebrew/bin/chromium"
 LLAMA_INDEX_API_KEY = "llx-LfEhUzGZDtDfnWnZMibUyUq69CRf6XURjre6ARUDBh32FTm8"
 # LLAMA_INDEX_API_KEY = "llx-4VoAUrUHCRA5o7NEdosEe6lAdHep1Xf7rKIug125lYtsDISn"
-CONVERT_API_KEY = "QI1KE8SGqz9nfCF2" # ProjectOhs
+# CONVERT_API_KEY = "ZwahbKts10xVNSeQ" # omri@newtone
+CONVERT_API_KEY= "HTR18UvYbvUY2RYE" # omer.shamash@gmail.com
 
 # BROWSER = sync_playwright().start().chromium.launch(headless=True, executable_path=EXECUTABLE_PATH)
 
@@ -89,7 +90,9 @@ def convert_url_to_pdf(url,
                        api_pdf=False,
                        respect_viewport=True,
                        everything=False,
-                       browser=None):
+                       browser=None,
+                       skip_if_exists=False,
+                       content_dict=None):
     # import pudb; pudb.set_trace()
 # Launch Playwright with Chromium
     # if not skip_browser:
@@ -98,6 +101,22 @@ def convert_url_to_pdf(url,
         with open(css, 'r') as file:
             css_content = file.read()
             css_content = css_content.replace("\n", "")
+
+
+    file_name = output
+    if not file_name:
+        if url.endswith("/"):
+            file_name = url.split('/')[-2] + ".pdf"
+        else:
+            file_name = url.split('/')[-1] + ".pdf"
+
+    if output_dir:
+        file_name = f"{output_dir}/{file_name}"
+
+    if skip_if_exists:
+        if os.path.exists(file_name):
+            print(f"Skipping... \n {file_name} already exists")
+            return
 
     if not skip_browser and not api_pdf:
         with sync_playwright() as p:
@@ -124,6 +143,14 @@ def convert_url_to_pdf(url,
             # page.wait_for_timeout(1000)
 
             html = page.content()
+
+            soup = BeautifulSoup(html, 'html.parser')
+        
+        # Extract the text content from the entire HTML
+            full_content = soup.get_text()
+            if content_dict:
+                content_dict[url] = full_content
+
             if playwright:
                 page.pdf(path="playwright-pdf.pdf")
 
@@ -140,15 +167,6 @@ def convert_url_to_pdf(url,
                 print("Returning due to only html")
                 return
             
-    file_name = output
-    if not file_name:
-        if url.endswith("/"):
-            file_name = url.split('/')[-2] + ".pdf"
-        else:
-            file_name = url.split('/')[-1] + ".pdf"
-
-    if output_dir:
-        file_name = f"{output_dir}/{file_name}"
         # print(html)
     if api_pdf:
         print("Generating PDF with API")
@@ -163,14 +181,16 @@ def convert_url_to_pdf(url,
             'CookieConsentBlock': 'true',                                                                                          
             'UserCss': css_content,                                                                                                   
             'LoadLazyContent': 'true',     
-            'ConversionDelay': '1',
-            #  'RespectViewport':respect_viewport_str,
-             'RespectViewport':'false',
+            'ConversionDelay': '0',
+             'RespectViewport':respect_viewport_str,
+            #  'RespectViewport':'false',
                  'FixedElements': 'relative',
+                 'HideElements': 'body > footer',
+                 'PageOrientation': 'portrait',
+                     'MarginRight': '0',
+                    'MarginLeft': '0'
 
-                                                                           
-            # 'MarginLeft': '0',                                                                                                     
-            # 'MarginRight': '0'                                                                                                     
+                                                                                                                                                              
         }, from_format = 'web').save_files(file_name)
 
         return
@@ -257,39 +277,26 @@ def prase_pdf_with_llama_index(pdf_path, company):
         language="en" # Optionaly you can define a language, default=en
     )
 
-    file_paths = [
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/What-to-consider-before-renewing-your-SD-WAN-license-or-service.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/What_to_expect_when_expecting_SASE.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Which_SSE_Can_Replace_All_of_Your_Physical_Firewall.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Whitepaper SASE Planning 10.6.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Why is SD-WAN Considered a Top Choice Among VPN Alternatives_3.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Why_should_remote_access_be_a_network_and_security_collaboration_project.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Win_8_IT_Projects_with_SASE.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/Your-First-100-Days-as-CIO-5-Steps-to-Success.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gartner_magic_quadrrant_single_vendor_sase.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gartner_strategic_roadmap.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-enterprise-firewalls-230922-cato-networks.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-secure-access-service-edge-sase-230911-catonetworks.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-secure-service-access-ssa-226672-catonetworks.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/gigaom-radar-for-software-defined-wide-area-networks-253841-catonetworks.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/security-qarterly-report-2022-H2.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/survey-2021.pdf",
-"/Users/omriperi/Project/gpt-crawler-py/cato/gated/the-5-step-action-plan-to-becoming-CISO.pdf"
-]
+    if not(os.path.isdir(pdf_path)):
+        documents = parser.load_data(pdf_path)
 
-    documents = parser.load_data(file_paths)
+    else:
+        # In this stage check that maybe we can skip some documents
+        required_exts = [".pdf"]
+        pdf_list = []
+        for root, _, files in os.walk(pdf_path):
+            # Print all files in the current directory
+            for file in files:
+                if file.split(".")[-1] == "pdf":
+                    if not os.path.exists(f"{pdf_path}/markdowns/{file}.md"):
+                        pdf_list.append(os.path.join(root, file))
 
-    # if not(os.path.isdir(pdf_path)):
-    #     documents = parser.load_data(pdf_path)
-
-    # else:
-    #     required_exts = [".pdf"]
-    #     print("Strart document extrattions")
-    #     file_extractor = {".pdf": parser} # This will take everything for the parser, but we should ignore
-    #     documents = SimpleDirectoryReader(pdf_path, 
-    #                                       recursive=True, 
-    #                                       file_extractor=file_extractor,
-    #                                       required_exts=required_exts).load_data()
+        print("Strart document extrattions")
+        file_extractor = {".pdf": parser} # This will take everything for the parser, but we should ignore
+        documents = SimpleDirectoryReader(input_files=pdf_list, 
+                                          recursive=True, 
+                                          file_extractor=file_extractor,
+                                          required_exts=required_exts).load_data()
 
     print("Done with document extractions")
 
@@ -349,7 +356,7 @@ from vectordb.chroma.jina_embedding import JinaEmbedder
 
 config = ChromaConfig(
     host="40.65.121.170",
-    collection_name="layerx",
+    collection_name="drivenets",
     ranking=CohereRanker(
         model="rerank-english-v2.0",
         trial_keys= [
@@ -370,7 +377,7 @@ newtone_client._doc_collection.add(ids=list_of_ids, documents=list_of_documents)
     ```
 
 
-    with open('../deep_kb.txt', 'r') as f:
+    with open('/Users/omriperi/Project/gpt-crawler-py/imubit/markdowns/summary.txt', 'r') as f:
         data = f.read()
     lines = data.splitlines()
     data = dict()
@@ -395,7 +402,9 @@ def parse_js_crwaler_json(document):
     return url_list
 
 
-def parse_yaml_and_convert_files(yaml_file, css, company):
+def parse_yaml_and_convert_files(yaml_file, css, company, crawler=False):
+
+    content_dict = {}
 
     with open(yaml_file, 'r') as file:
         yaml_content = yaml.safe_load(file)
@@ -423,7 +432,10 @@ def parse_yaml_and_convert_files(yaml_file, css, company):
                                            api_pdf=auto_pdf_engine, 
                                            css=css,
                                            output_dir=output_dir,
-                                           respect_viewport=respect_viewport)
+                                           respect_viewport=respect_viewport,
+                                           skip_if_exists=True,
+                                           content_dict=content_dict,
+                                           only_html=crawler)
                     continue
 
                 convert_url_to_pdf(link, 
@@ -431,7 +443,12 @@ def parse_yaml_and_convert_files(yaml_file, css, company):
                                    api_pdf=auto_pdf_engine, 
                                    css=css,
                                    output_dir=output_dir,
-                                   respect_viewport=respect_viewport)
+                                   respect_viewport=respect_viewport,
+                                   skip_if_exists=True,
+                                   content_dict=content_dict,
+                                   only_html=crawler)
+                
+    
                 
 
 def get_chroma_collection(collection_name):
@@ -492,7 +509,7 @@ Format:
 This is the format you shuold use:
 
 "
-{document_name}@<bullet-point-index>: <bullet-point-content>
+<bullet-point-index>: <bullet-point-content>
 "
 
 The response contain only bullet points, without any pretext of additions beforehand 
@@ -636,8 +653,13 @@ def summarize_specific_file_llama(file_name, content):
     decoded_response = json.loads(res.content.decode(), strict=False)
 
     summary = decoded_response['choices'][0]['message']['content']
+    print("-----")
+    print(summary)
+    print("-----")
     lines_response = summary.splitlines()
-    summary_clean = '\n'.join([line for line in lines_response if "@" in line])
+
+    # Checking there's a line and its starting with number
+    summary_clean = '\n'.join([f"{file_name}@{line}" for line in lines_response if len(line) > 0 and line[0].isdigit()])
 
     print(file_name)
     print(summary_clean)
@@ -660,6 +682,8 @@ def summarize_with_llama(markdown_folder):
             md_content =json.load(file)
 
         result = summarize_specific_file_llama(markdown[:-3], md_content['text'])
+
+        print(result)
 
         if result is None:
             with open("missing-files.txt", 'a') as file:
@@ -920,6 +944,8 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
 
     # This is the case where we're taking data into llama parse
     if llama_parse:
+        if not company:
+            raise Exception("No company provided!")
         prase_pdf_with_llama_index(llama_parse, company)
         return
     
@@ -963,7 +989,7 @@ def click_cli_main(urls,            # List of URL's to convert or a configuratio
         if not company:
             raise Exception("No company provided with yaml")
         # It's a local file
-        parse_yaml_and_convert_files(url_list[0], css, company)
+        parse_yaml_and_convert_files(url_list[0], css, company, crawler=only_html)
         # prase_pdf_with_llama_index(pdf_path=company, company=company)
         return
 

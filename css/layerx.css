@@ -1,0 +1,42 @@
+#demo {
+    display: none;
+}
+
+body > section.purple-bg.star.short.full {
+    display: none;
+}
+
+body > footer {
+    display: none;
+}
+
+body > header {
+    display: none;
+}
+
+
+/* asds */
+
+body > div.single-kb > div > div > div > div.col-lg-4.pe-md-5 {
+    display: none;
+}
+
+body > div.single-kb > div > div > div > div.col-lg-4.pe-md-5 > div > div > p {
+    display: none;
+}
+
+body > div.single-kb > div > div > div > div.col-lg-4.pe-md-5 {
+    display: none;
+}
+
+body > div.single-kb > div > div > div > div.col-lg-4.pe-md-5 > div {
+    display: none;
+}
+
+body > div.blog-post > div.container > div > div.col-lg-3.offset-lg-1.__web-inspector-hide-shortcut__ {
+    display: none;
+}
+
+body > section {
+    display: none;
+}
